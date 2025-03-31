@@ -1,6 +1,26 @@
 [
   {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
+    "Method": "AuthenticatedOnlyEndPoit",
+    "RelativePath": "api/Auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AuthController",
+    "Method": "AdminOnlyEndpoint",
+    "RelativePath": "api/Auth/admin-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
     "HttpMethod": "POST",
@@ -15,7 +35,33 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "System.String",
+        "Type": "TradesCore_API.Models.TokenResponseDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AuthController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/Auth/refresh-token",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TradesCore_API.Models.RefreshTokenRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "TradesCore_API.Models.TokenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
