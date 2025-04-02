@@ -8,8 +8,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using TradesCore_API.Entities;
+using TradesCore_API.IServices;
 using TradesCore_API.Models;
-using TradesCore_API.Services;
 
 namespace TradesCore_API.Controllers
 {

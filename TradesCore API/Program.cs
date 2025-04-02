@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using System.Text;
 using TradesCore_API.Data;
+using TradesCore_API.IServices;
 using TradesCore_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);

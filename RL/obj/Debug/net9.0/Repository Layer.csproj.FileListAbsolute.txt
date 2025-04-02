@@ -1,0 +1,16 @@
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.csproj.AssemblyReference.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.AssemblyInfoInputs.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.AssemblyInfo.cs
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.csproj.CoreCompileInputs.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.sourcelink.json
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\bin\Debug\net9.0\Repository Layer.deps.json
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\bin\Debug\net9.0\Repository Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\bin\Debug\net9.0\Repository Layer.pdb
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\bin\Debug\net9.0\Data Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\bin\Debug\net9.0\Data Layer.pdb
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Reposito.726B6223.Up2Date
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\refint\Repository Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\Repository Layer.pdb
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\RL\obj\Debug\net9.0\ref\Repository Layer.dll
