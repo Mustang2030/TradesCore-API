@@ -1,4 +1,4 @@
-﻿using TradesCore_API.Entities;
+﻿using Data_Layer.Entities;
 using TradesCore_API.Models;
 
 namespace TradesCore_API.IServices

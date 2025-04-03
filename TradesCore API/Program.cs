@@ -1,9 +1,9 @@
+using Data_Layer.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Scalar.AspNetCore;
 using System.Text;
-using TradesCore_API.Data;
 using TradesCore_API.IServices;
 using TradesCore_API.Services;
 
@@ -15,7 +15,7 @@ builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddDbContext<UserDbContext>(options =>
+builder.Services.AddDbContext<TradesCoreDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("UserDatabase")));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>

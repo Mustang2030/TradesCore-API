@@ -87,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "TradesCore_API.Entities.User",
+        "Type": "Data_Layer.Entities.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

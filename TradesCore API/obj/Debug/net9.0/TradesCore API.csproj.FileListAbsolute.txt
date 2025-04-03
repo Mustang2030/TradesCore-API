@@ -1,10 +1,3 @@
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.csproj.AssemblyReference.cache
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.AssemblyInfoInputs.cache
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.AssemblyInfo.cs
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.csproj.CoreCompileInputs.cache
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.sourcelink.json
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\appsettings.Development.json
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\appsettings.json
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\TradesCore API.staticwebassets.endpoints.json
@@ -153,7 +146,14 @@ C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\D
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\Repository Layer.dll
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\Repository Layer.pdb
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\bin\Debug\net9.0\Data Layer.pdb
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.csproj.AssemblyReference.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.AssemblyInfoInputs.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.AssemblyInfo.cs
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.csproj.CoreCompileInputs.cache
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\TradesCore API.sourcelink.json
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\scopedcss\bundle\TradesCore API.styles.css
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\staticwebassets.build.json
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\TradesCore API\obj\Debug\net9.0\staticwebassets.development.json

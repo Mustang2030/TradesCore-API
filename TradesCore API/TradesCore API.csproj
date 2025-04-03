@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>TradesCore_API</RootNamespace>
+    <UserSecretsId>e194f3be-ba1f-42ed-8e59-dbabda8e40f5</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

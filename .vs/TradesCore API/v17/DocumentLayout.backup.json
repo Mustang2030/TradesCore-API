@@ -3,23 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\DL\\Migrations\\20250402185708_Structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DL\\Migrations\\20250402185708_Structure.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore api\\rl\\repositories\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|solutionrelative:rl\\repositories\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore api\\tradescore api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore api\\tradescore api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore api\\dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,66 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250402185708_Structure.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\DL\\Migrations\\20250402185708_Structure.cs",
-              "RelativeDocumentMoniker": "DL\\Migrations\\20250402185708_Structure.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\DL\\Migrations\\20250402185708_Structure.cs",
-              "RelativeToolTip": "DL\\Migrations\\20250402185708_Structure.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "TradesCoreDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\DL\\Data\\TradesCoreDbContext.cs",
+              "RelativeDocumentMoniker": "DL\\Data\\TradesCoreDbContext.cs",
+              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\DL\\Data\\TradesCoreDbContext.cs",
+              "RelativeToolTip": "DL\\Data\\TradesCoreDbContext.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T18:57:09.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\TradesCore API\\appsettings.json",
-              "RelativeDocumentMoniker": "TradesCore API\\appsettings.json",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\TradesCore API\\appsettings.json",
-              "RelativeToolTip": "TradesCore API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-02T18:52:05.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.200\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
-              "ViewState": "AgIAADEAAAAAAAAAAAAiwDUAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-04-02T18:42:22.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\TradesCore API\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "TradesCore API\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\TradesCore API\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "TradesCore API\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBEAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T18:39:30.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\RL\\Repositories\\AuthService.cs",
-              "RelativeDocumentMoniker": "RL\\Repositories\\AuthService.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore API\\RL\\Repositories\\AuthService.cs",
-              "RelativeToolTip": "RL\\Repositories\\AuthService.cs",
-              "ViewState": "AgIAAGsAAAAAAAAAAAAAAHIAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-02T18:37:54.193Z",
+              "WhenOpened": "2025-04-02T23:58:56.665Z",
               "EditorCaption": ""
             }
           ]

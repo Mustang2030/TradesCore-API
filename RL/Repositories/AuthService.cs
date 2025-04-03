@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Data_Layer.Data;
+using Data_Layer.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -6,14 +8,12 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using TradesCore_API.Data;
-using TradesCore_API.Entities;
 using TradesCore_API.IServices;
 using TradesCore_API.Models;
 
 namespace TradesCore_API.Services
 {
-    public class AuthService(UserDbContext context, IConfiguration configuration) : IAuthService
+    public class AuthService(TradesCoreDbContext context, IConfiguration configuration) : IAuthService
     {
         public async Task<TokenResponseDto?> LoginAsync(UserDto request)
         {

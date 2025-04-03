@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("e194f3be-ba1f-42ed-8e59-dbabda8e40f5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a9f1f47606060f6e563cfc798a1ed5dc6c6d873")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7a75779d37ecbae74931e64a80542d7dcfde6936")]
 [assembly: System.Reflection.AssemblyProductAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
