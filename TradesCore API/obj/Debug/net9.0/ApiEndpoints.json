@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "TradesCore_API.Controllers.AdminActionsController",
+    "Method": "AddCategory",
+    "RelativePath": "api/AdminActions/Category",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Data_Layer.Models.CategoryDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
     "Method": "AuthenticatedOnlyEndPoit",
     "RelativePath": "api/Auth",

@@ -9,7 +9,7 @@ namespace Data_Layer.Entities
 {
     public class Product
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
@@ -19,10 +19,10 @@ namespace Data_Layer.Entities
 
         #region Foreign Key
         [ForeignKey(nameof(Category))]
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
 
         [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         #endregion
 
         #region Navigation Properties

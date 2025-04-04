@@ -9,14 +9,14 @@ namespace Data_Layer.Entities
 {
    public class Order
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public DateTime OrderDate { get; set; }
         public double TotalAmount { get; set; }
         public string OrderStatus { get; set; } // Shipped, Pending, Delivered, Cancelled
 
         #region Foreign Key
         [ForeignKey(nameof(User))]
-        public Guid UserId { get; set; }
+        public string UserId { get; set; }
         #endregion
 
         #region Navigation Properties

@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repository_Layer.Repositories
+namespace Data_Layer.Models
 {
-    public class SellerActions
+    public class CategoryDto
     {
+        public string Name { get; set; } = string.Empty;
     }
 }

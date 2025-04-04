@@ -9,15 +9,15 @@ namespace Data_Layer.Entities
 {
     public class CartItem
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public int Quantity { get; set; }
 
         #region Foreign Key
         [ForeignKey(nameof(Cart))]
-        public int CartId { get; set; }
+        public string CartId { get; set; }
 
         [ForeignKey(nameof(Product))]
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
         #endregion
 
         #region Navigation Property

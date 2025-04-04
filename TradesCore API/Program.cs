@@ -2,6 +2,8 @@ using Data_Layer.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Repository_Layer.IRepositories;
+using Repository_Layer.Repositories;
 using Scalar.AspNetCore;
 using System.Text;
 using TradesCore_API.IServices;
@@ -10,13 +12,15 @@ using TradesCore_API.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAdminActions, AdminActions>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<TradesCoreDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("UserDatabase")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("TradesCoreDatabase")));
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
@@ -32,8 +36,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidateIssuerSigningKey = true,
     };
 });
-
-builder.Services.AddScoped<IAuthService, AuthService>();
 
 var app = builder.Build();
 

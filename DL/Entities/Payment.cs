@@ -9,7 +9,7 @@ namespace Data_Layer.Entities
 {
     public class Payment
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public double Amount { get; set; }
         public string PaymentMethod { get; set; }
         public string Status { get; set; } //Success, Failed, Pending payment
@@ -17,7 +17,7 @@ namespace Data_Layer.Entities
 
         #region Foreign Key
         [ForeignKey(nameof(Order))]
-        public int OrderId { get; set; }
+        public string OrderId { get; set; }
         #endregion
 
         #region Navigation Property

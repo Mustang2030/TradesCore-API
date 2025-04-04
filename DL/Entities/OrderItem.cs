@@ -9,16 +9,16 @@ namespace Data_Layer.Entities
 {
     public class OrderItem
     {
-        public int Id { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
         public int Quantity { get; set; }
         public double Price { get; set; }
 
         #region Foreign Key
         [ForeignKey(nameof(Order))]
-        public int OrderId { get; set; }
+        public string OrderId { get; set; }
 
         [ForeignKey(nameof(Product))]
-        public int ProductId { get; set; }
+        public string ProductId { get; set; }
         #endregion
 
         #region Navigation Properties
