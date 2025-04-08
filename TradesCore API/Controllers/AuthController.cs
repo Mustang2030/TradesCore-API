@@ -1,4 +1,5 @@
-﻿using Data_Layer.Entities;
+﻿using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -9,7 +10,6 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using TradesCore_API.IServices;
-using TradesCore_API.Models;
 
 namespace TradesCore_API.Controllers
 {

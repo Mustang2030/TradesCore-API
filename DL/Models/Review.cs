@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-namespace Data_Layer.Entities
+
+namespace Data_Layer.Models
 {
     public class Review
     {

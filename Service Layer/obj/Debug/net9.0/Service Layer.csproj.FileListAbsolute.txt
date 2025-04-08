@@ -10,3 +10,15 @@ C:\Users\tsoai\Desktop\Git Repo\TradesCore API\Service Layer\obj\Debug\net9.0\Se
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\Service Layer\obj\Debug\net9.0\refint\Service Layer.dll
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\Service Layer\obj\Debug\net9.0\Service Layer.pdb
 C:\Users\tsoai\Desktop\Git Repo\TradesCore API\Service Layer\obj\Debug\net9.0\ref\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Service Layer.deps.json
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Service Layer.pdb
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.AssemblyInfoInputs.cache
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.AssemblyInfo.cs
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.csproj.CoreCompileInputs.cache
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.sourcelink.json
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\refint\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.pdb
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\ref\Service Layer.dll

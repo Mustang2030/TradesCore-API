@@ -1,5 +1,4 @@
-﻿using Data_Layer.Entities;
-using Data_Layer.Models;
+﻿using Data_Layer.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository_Layer.IRepositories;
@@ -10,15 +9,14 @@ namespace TradesCore_API.Controllers
     [ApiController]
     public class AdminActionsController(IAdminActions adminActions) : ControllerBase
     {
-        private Dictionary<string, object> _returnDictionary = [];
 
         [HttpPost("Category")]
         public IActionResult AddCategory(CategoryDto request)
         {
             try
             {
-                _returnDictionary = adminActions.AddCategoryAsync(request).Result;
-                if (!(bool)_returnDictionary["Success"]) return BadRequest(_returnDictionary["ErrorMessage"]);
+                var result = adminActions.AddCategoryAsync(request).Result;
+                if (!result.Success) return BadRequest(result.ErrorMessage);
                 return Ok();
             }
             catch (Exception e)

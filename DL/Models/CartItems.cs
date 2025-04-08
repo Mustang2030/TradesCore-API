@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Data_Layer.Entities
+namespace Data_Layer.Models
 {
-    public class CartItem
+    public class CartItems
     {
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-        public int Quantity { get; set; }
-
         #region Foreign Key
         [ForeignKey(nameof(Cart))]
         public string CartId { get; set; }

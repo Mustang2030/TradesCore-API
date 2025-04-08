@@ -1,4 +1,4 @@
-﻿namespace TradesCore_API.Models
+﻿namespace Data_Layer.DTOs
 {
     public class TokenResponseDto
     {

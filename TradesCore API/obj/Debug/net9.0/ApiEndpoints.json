@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Data_Layer.Models.CategoryDto",
+        "Type": "Data_Layer.DTOs.CategoryDto",
         "IsRequired": true
       }
     ],
@@ -45,13 +45,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "TradesCore_API.Models.UserDto",
+        "Type": "Data_Layer.DTOs.UserDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "TradesCore_API.Models.TokenResponseDto",
+        "Type": "Data_Layer.DTOs.TokenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -71,13 +71,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "TradesCore_API.Models.RefreshTokenRequestDto",
+        "Type": "Data_Layer.DTOs.RefreshTokenRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "TradesCore_API.Models.TokenResponseDto",
+        "Type": "Data_Layer.DTOs.TokenResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -97,13 +97,13 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "TradesCore_API.Models.UserDto",
+        "Type": "Data_Layer.DTOs.UserDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Data_Layer.Entities.User",
+        "Type": "Data_Layer.Models.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

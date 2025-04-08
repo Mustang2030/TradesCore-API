@@ -1,5 +1,5 @@
-﻿using Data_Layer.Entities;
-using TradesCore_API.Models;
+﻿using Data_Layer.DTOs;
+using Data_Layer.Models;
 
 namespace TradesCore_API.IServices
 {

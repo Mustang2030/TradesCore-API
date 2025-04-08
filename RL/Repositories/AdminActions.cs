@@ -1,6 +1,7 @@
 ﻿using Data_Layer.Data;
-using Data_Layer.Entities;
+using Data_Layer.DTOs;
 using Data_Layer.Models;
+using Data_Layer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Repository_Layer.IRepositories;
 
@@ -8,9 +9,8 @@ namespace Repository_Layer.Repositories
 {
     public class AdminActions(TradesCoreDbContext context) : IAdminActions
     {
-        private Dictionary<string, object> _returnDictionary = [];
 
-        public async Task<Dictionary<string,object>> AddCategoryAsync(CategoryDto request)
+        public async Task<OperationResult<CategoryDto>> AddCategoryAsync(CategoryDto request)
         {
             try
             {
@@ -25,14 +25,11 @@ namespace Repository_Layer.Repositories
                 await context.AddAsync(newCat);
                 await context.SaveChangesAsync();
 
-                _returnDictionary["Success"] = true;
-                return _returnDictionary;
+                return OperationResult<CategoryDto>.SuccessResult();
             }
             catch (Exception e)
             {
-                _returnDictionary["Success"] = false;
-                _returnDictionary["ErrorMessage"] = e.Message + "\nInner Exception: " + e.InnerException;
-                return _returnDictionary;
+                return OperationResult<CategoryDto>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
     }

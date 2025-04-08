@@ -1,12 +1,7 @@
-﻿using Data_Layer.Entities;
-using System;
-using System.Collections.Generic;
+﻿using Data_Layer.Models;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data_Layer.Models
+namespace Data_Layer.DTOs
 {
     public class ProductDto
     {

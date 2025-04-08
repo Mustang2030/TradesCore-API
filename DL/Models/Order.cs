@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Data_Layer.Entities
+namespace Data_Layer.Models
 {
    public class Order
     {
@@ -22,7 +17,7 @@ namespace Data_Layer.Entities
         #region Navigation Properties
         public User User { get; set; }
 
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItems> OrderItems { get; set; }
         public Payment Payment { get; set; }
         #endregion
     }

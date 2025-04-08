@@ -1,4 +1,4 @@
-﻿namespace Data_Layer.Entities
+﻿namespace Data_Layer.Models
 {
     public class User
     {

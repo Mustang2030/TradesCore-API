@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data_Layer.Entities
+namespace Data_Layer.Models
 {
     public class Payment
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
+
         public double Amount { get; set; }
+
         public string PaymentMethod { get; set; }
-        public string Status { get; set; } //Success, Failed, Pending payment
+
+        [AllowedValues("Success", "Failed", "Pending")]
+        public string Status { get; set; }
+
         public DateTime PaymentDate { get; set; }
 
         #region Foreign Key

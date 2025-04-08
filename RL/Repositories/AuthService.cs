@@ -1,5 +1,6 @@
 ﻿using Data_Layer.Data;
-using Data_Layer.Entities;
+using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -9,7 +10,6 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using TradesCore_API.IServices;
-using TradesCore_API.Models;
 
 namespace TradesCore_API.Services
 {
