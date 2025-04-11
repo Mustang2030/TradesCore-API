@@ -25,5 +25,15 @@ namespace TradesCore_API.Controllers
             }
            
         }
+
+        public IActionResult Testing()
+        {
+            return Ok();
+        }
+
+        public IActionResult Testing2()
+        {
+            return BadRequest();
+        }
     }
 }

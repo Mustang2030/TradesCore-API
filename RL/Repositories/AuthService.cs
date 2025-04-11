@@ -120,7 +120,5 @@ namespace TradesCore_API.Services
 
             return new JwtSecurityTokenHandler().WriteToken(tokenDescriptor);
         }
-
-     
     }
 }
