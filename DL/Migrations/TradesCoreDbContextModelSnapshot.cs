@@ -22,7 +22,7 @@ namespace Data_Layer.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Data_Layer.Entities.Cart", b =>
+            modelBuilder.Entity("Data_Layer.Models.Cart", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -39,32 +39,22 @@ namespace Data_Layer.Migrations
                     b.ToTable("Carts");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.CartItem", b =>
+            modelBuilder.Entity("Data_Layer.Models.CartItems", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("CartId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProductId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Quantity")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CartId");
+                    b.HasKey("CartId", "ProductId");
 
                     b.HasIndex("ProductId");
 
                     b.ToTable("CartItems");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Category", b =>
+            modelBuilder.Entity("Data_Layer.Models.Category", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -77,7 +67,22 @@ namespace Data_Layer.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Order", b =>
+            modelBuilder.Entity("Data_Layer.Models.CategoryProduct", b =>
+                {
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProductId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("CategoryId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CategoryProduct");
+                });
+
+            modelBuilder.Entity("Data_Layer.Models.Order", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -103,13 +108,12 @@ namespace Data_Layer.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.OrderItem", b =>
+            modelBuilder.Entity("Data_Layer.Models.OrderItems", b =>
                 {
-                    b.Property<string>("Id")
+                    b.Property<string>("OrderId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("OrderId")
-                        .IsRequired()
+                    b.Property<string>("ProductId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("PaymentId")
@@ -118,16 +122,10 @@ namespace Data_Layer.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
-                    b.Property<string>("ProductId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
+                    b.HasKey("OrderId", "ProductId");
 
                     b.HasIndex("PaymentId");
 
@@ -136,7 +134,7 @@ namespace Data_Layer.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Payment", b =>
+            modelBuilder.Entity("Data_Layer.Models.Payment", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -167,13 +165,9 @@ namespace Data_Layer.Migrations
                     b.ToTable("Payments");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Product", b =>
+            modelBuilder.Entity("Data_Layer.Models.Product", b =>
                 {
                     b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
@@ -183,9 +177,6 @@ namespace Data_Layer.Migrations
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("MyProperty")
-                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -203,14 +194,12 @@ namespace Data_Layer.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Review", b =>
+            modelBuilder.Entity("Data_Layer.Models.Review", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -241,7 +230,7 @@ namespace Data_Layer.Migrations
                     b.ToTable("Reviews");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.User", b =>
+            modelBuilder.Entity("Data_Layer.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -269,26 +258,26 @@ namespace Data_Layer.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Cart", b =>
+            modelBuilder.Entity("Data_Layer.Models.Cart", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.User", "User")
+                    b.HasOne("Data_Layer.Models.User", "User")
                         .WithOne()
-                        .HasForeignKey("Data_Layer.Entities.Cart", "UserId")
+                        .HasForeignKey("Data_Layer.Models.Cart", "UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.CartItem", b =>
+            modelBuilder.Entity("Data_Layer.Models.CartItems", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.Cart", "Cart")
+                    b.HasOne("Data_Layer.Models.Cart", "Cart")
                         .WithMany("CartItems")
                         .HasForeignKey("CartId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data_Layer.Entities.Product", "Product")
+                    b.HasOne("Data_Layer.Models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -299,9 +288,28 @@ namespace Data_Layer.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Order", b =>
+            modelBuilder.Entity("Data_Layer.Models.CategoryProduct", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.User", "User")
+                    b.HasOne("Data_Layer.Models.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Data_Layer.Models.Product", "Product")
+                        .WithMany("Categories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Data_Layer.Models.Order", b =>
+                {
+                    b.HasOne("Data_Layer.Models.User", "User")
                         .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -310,20 +318,20 @@ namespace Data_Layer.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.OrderItem", b =>
+            modelBuilder.Entity("Data_Layer.Models.OrderItems", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.Order", "Order")
+                    b.HasOne("Data_Layer.Models.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data_Layer.Entities.Payment", "Payment")
+                    b.HasOne("Data_Layer.Models.Payment", "Payment")
                         .WithMany()
                         .HasForeignKey("PaymentId");
 
-                    b.HasOne("Data_Layer.Entities.Product", "Product")
-                        .WithMany("OrderItems")
+                    b.HasOne("Data_Layer.Models.Product", "Product")
+                        .WithMany("Orders")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -335,45 +343,37 @@ namespace Data_Layer.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Payment", b =>
+            modelBuilder.Entity("Data_Layer.Models.Payment", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.Order", "Order")
+                    b.HasOne("Data_Layer.Models.Order", "Order")
                         .WithOne("Payment")
-                        .HasForeignKey("Data_Layer.Entities.Payment", "OrderId")
+                        .HasForeignKey("Data_Layer.Models.Payment", "OrderId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Product", b =>
+            modelBuilder.Entity("Data_Layer.Models.Product", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Data_Layer.Entities.User", "User")
+                    b.HasOne("Data_Layer.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Category");
-
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Review", b =>
+            modelBuilder.Entity("Data_Layer.Models.Review", b =>
                 {
-                    b.HasOne("Data_Layer.Entities.Product", "Product")
+                    b.HasOne("Data_Layer.Models.Product", "Product")
                         .WithMany("Reviews")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data_Layer.Entities.User", "User")
+                    b.HasOne("Data_Layer.Models.User", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -384,17 +384,17 @@ namespace Data_Layer.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Cart", b =>
+            modelBuilder.Entity("Data_Layer.Models.Cart", b =>
                 {
                     b.Navigation("CartItems");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Category", b =>
+            modelBuilder.Entity("Data_Layer.Models.Category", b =>
                 {
                     b.Navigation("Products");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Order", b =>
+            modelBuilder.Entity("Data_Layer.Models.Order", b =>
                 {
                     b.Navigation("OrderItems");
 
@@ -402,14 +402,16 @@ namespace Data_Layer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.Product", b =>
+            modelBuilder.Entity("Data_Layer.Models.Product", b =>
                 {
-                    b.Navigation("OrderItems");
+                    b.Navigation("Categories");
+
+                    b.Navigation("Orders");
 
                     b.Navigation("Reviews");
                 });
 
-            modelBuilder.Entity("Data_Layer.Entities.User", b =>
+            modelBuilder.Entity("Data_Layer.Models.User", b =>
                 {
                     b.Navigation("Orders");
 

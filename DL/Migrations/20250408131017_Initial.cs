@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data_Layer.Migrations
 {
     /// <inheritdoc />
-    public partial class Testing : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -88,19 +88,11 @@ namespace Data_Layer.Migrations
                     Price = table.Column<double>(type: "float", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MyProperty = table.Column<int>(type: "int", nullable: false),
-                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Products_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Products_Users_UserId",
                         column: x => x.UserId,
@@ -134,14 +126,12 @@ namespace Data_Layer.Migrations
                 name: "CartItems",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
                     CartId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProductId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CartItems", x => x.Id);
+                    table.PrimaryKey("PK_CartItems", x => new { x.CartId, x.ProductId });
                     table.ForeignKey(
                         name: "FK_CartItems_Carts_CartId",
                         column: x => x.CartId,
@@ -150,6 +140,30 @@ namespace Data_Layer.Migrations
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_CartItems_Products_ProductId",
+                        column: x => x.ProductId,
+                        principalTable: "Products",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CategoryProduct",
+                columns: table => new
+                {
+                    CategoryId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProductId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CategoryProduct", x => new { x.CategoryId, x.ProductId });
+                    table.ForeignKey(
+                        name: "FK_CategoryProduct_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_CategoryProduct_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
                         principalColumn: "Id",
@@ -187,16 +201,15 @@ namespace Data_Layer.Migrations
                 name: "OrderItems",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false),
                     OrderId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProductId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<double>(type: "float", nullable: false),
                     PaymentId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderItems", x => x.Id);
+                    table.PrimaryKey("PK_OrderItems", x => new { x.OrderId, x.ProductId });
                     table.ForeignKey(
                         name: "FK_OrderItems_Orders_OrderId",
                         column: x => x.OrderId,
@@ -216,11 +229,6 @@ namespace Data_Layer.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CartItems_CartId",
-                table: "CartItems",
-                column: "CartId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_CartItems_ProductId",
                 table: "CartItems",
                 column: "ProductId");
@@ -232,9 +240,9 @@ namespace Data_Layer.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItems_OrderId",
-                table: "OrderItems",
-                column: "OrderId");
+                name: "IX_CategoryProduct_ProductId",
+                table: "CategoryProduct",
+                column: "ProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItems_PaymentId",
@@ -256,11 +264,6 @@ namespace Data_Layer.Migrations
                 table: "Payments",
                 column: "OrderId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_CategoryId",
-                table: "Products",
-                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Products_UserId",
@@ -285,6 +288,9 @@ namespace Data_Layer.Migrations
                 name: "CartItems");
 
             migrationBuilder.DropTable(
+                name: "CategoryProduct");
+
+            migrationBuilder.DropTable(
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
@@ -294,6 +300,9 @@ namespace Data_Layer.Migrations
                 name: "Carts");
 
             migrationBuilder.DropTable(
+                name: "Categories");
+
+            migrationBuilder.DropTable(
                 name: "Payments");
 
             migrationBuilder.DropTable(
@@ -301,9 +310,6 @@ namespace Data_Layer.Migrations
 
             migrationBuilder.DropTable(
                 name: "Orders");
-
-            migrationBuilder.DropTable(
-                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Users");

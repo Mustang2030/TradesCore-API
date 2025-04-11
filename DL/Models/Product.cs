@@ -17,9 +17,6 @@ namespace Data_Layer.Models
         public string ImageUrl { get; set; }
 
         #region Foreign Key
-        [ForeignKey(nameof(Categories))]
-        public string CategoryId { get; set; }
-
         [ForeignKey(nameof(User))]
         public string UserId { get; set; }
         #endregion

@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\tradescore api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\tradescore api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +21,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\data\\tradescoredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\lukhanyo\\desktop\\git repo\\tradescore-api\\dl\\models\\categoryproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,11 +102,50 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 16,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\User.cs",
+              "RelativeDocumentMoniker": "DL\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\User.cs",
+              "RelativeToolTip": "DL\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T13:20:42.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\appsettings.json",
+              "RelativeDocumentMoniker": "TradesCore API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\appsettings.json",
+              "RelativeToolTip": "TradesCore API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAADsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-08T13:12:18.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Program.cs",
+              "RelativeDocumentMoniker": "TradesCore API\\Program.cs",
+              "ToolTip": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Program.cs",
+              "RelativeToolTip": "TradesCore API\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-08T13:04:29.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "CategoryProduct.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\CategoryProduct.cs",
               "RelativeDocumentMoniker": "DL\\Models\\CategoryProduct.cs",
@@ -107,7 +158,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\AuthService.cs",
               "RelativeDocumentMoniker": "RL\\Repositories\\AuthService.cs",
@@ -115,12 +166,11 @@
               "RelativeToolTip": "RL\\Repositories\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T07:37:40.849Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T07:37:40.849Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "TradesCore API\\Controllers\\AuthController.cs",
@@ -128,12 +178,11 @@
               "RelativeToolTip": "TradesCore API\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-06T07:37:36.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-06T07:37:36.059Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "AdminActionsController.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Controllers\\AdminActionsController.cs",
               "RelativeDocumentMoniker": "TradesCore API\\Controllers\\AdminActionsController.cs",
@@ -141,12 +190,11 @@
               "RelativeToolTip": "TradesCore API\\Controllers\\AdminActionsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:55:31.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:55:31.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "IAdminActions.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\RL\\IRepositories\\IAdminActions.cs",
               "RelativeDocumentMoniker": "RL\\IRepositories\\IAdminActions.cs",
@@ -154,12 +202,11 @@
               "RelativeToolTip": "RL\\IRepositories\\IAdminActions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:53:40.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:53:40.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "OperationResult.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Utilities\\OperationResult.cs",
               "RelativeDocumentMoniker": "DL\\Utilities\\OperationResult.cs",
@@ -167,12 +214,11 @@
               "RelativeToolTip": "DL\\Utilities\\OperationResult.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:42:14.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:42:14.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\DTOs\\UserDto.cs",
               "RelativeDocumentMoniker": "DL\\DTOs\\UserDto.cs",
@@ -180,12 +226,11 @@
               "RelativeToolTip": "DL\\DTOs\\UserDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:39:09.18Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:39:09.18Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "TokenResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\DTOs\\TokenResponseDto.cs",
               "RelativeDocumentMoniker": "DL\\DTOs\\TokenResponseDto.cs",
@@ -193,12 +238,11 @@
               "RelativeToolTip": "DL\\DTOs\\TokenResponseDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:39:01.552Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:39:01.552Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "RefreshTokenRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\DTOs\\RefreshTokenRequestDto.cs",
               "RelativeDocumentMoniker": "DL\\DTOs\\RefreshTokenRequestDto.cs",
@@ -206,12 +250,11 @@
               "RelativeToolTip": "DL\\DTOs\\RefreshTokenRequestDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:38:51.693Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:38:51.693Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "ProductDto.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\DTOs\\ProductDto.cs",
               "RelativeDocumentMoniker": "DL\\DTOs\\ProductDto.cs",
@@ -219,12 +262,11 @@
               "RelativeToolTip": "DL\\DTOs\\ProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:38:32.241Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:38:32.241Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Review.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Review.cs",
@@ -232,12 +274,11 @@
               "RelativeToolTip": "DL\\Models\\Review.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:25:59.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:25:59.617Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Payment.cs",
@@ -245,12 +286,11 @@
               "RelativeToolTip": "DL\\Models\\Payment.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:24:34.161Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:24:34.161Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Order.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Order.cs",
@@ -258,12 +298,11 @@
               "RelativeToolTip": "DL\\Models\\Order.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T22:23:40.886Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T22:23:40.886Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "CartItems.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\CartItems.cs",
               "RelativeDocumentMoniker": "DL\\Models\\CartItems.cs",
@@ -271,25 +310,24 @@
               "RelativeToolTip": "DL\\Models\\CartItems.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T08:30:59.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T08:30:59.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Product.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Product.cs",
               "ToolTip": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Product.cs",
               "RelativeToolTip": "DL\\Models\\Product.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T08:21:02.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Category.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Category.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Category.cs",
@@ -302,20 +340,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "TradesCoreDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data\\TradesCoreDbContext.cs",
               "RelativeDocumentMoniker": "DL\\Data\\TradesCoreDbContext.cs",
               "ToolTip": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data\\TradesCoreDbContext.cs",
               "RelativeToolTip": "DL\\Data\\TradesCoreDbContext.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAABMAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-05T08:16:10.701Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "OrderItems.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\OrderItems.cs",
               "RelativeDocumentMoniker": "DL\\Models\\OrderItems.cs",
@@ -323,12 +361,11 @@
               "RelativeToolTip": "DL\\Models\\OrderItems.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T08:15:41.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T08:15:41.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "Cart.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "DL\\Models\\Cart.cs",
@@ -336,12 +373,11 @@
               "RelativeToolTip": "DL\\Models\\Cart.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-05T08:02:21.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-05T08:02:21.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "AdminActions.cs",
               "DocumentMoniker": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\AdminActions.cs",
               "RelativeDocumentMoniker": "RL\\Repositories\\AdminActions.cs",
@@ -349,8 +385,7 @@
               "RelativeToolTip": "RL\\Repositories\\AdminActions.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T15:22:06.324Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T15:22:06.324Z"
             }
           ]
         }

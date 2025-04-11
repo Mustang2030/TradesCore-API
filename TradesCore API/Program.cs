@@ -20,7 +20,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<TradesCoreDbContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("TradesCoreDatabase")));
+options.UseSqlServer(builder.Configuration.GetConnectionString("LukhanyoDatabase"))); //Change to proper DB Connection String on your side.
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {
