@@ -2,12 +2,13 @@
 
 namespace Data_Layer.Models
 {
-   public class Order
+    public class Order
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
-        public DateTime OrderDate { get; set; }
-        public double TotalAmount { get; set; }
-        public string OrderStatus { get; set; } // Shipped, Pending, Delivered, Cancelled
+
+        public DateTime OrderDate { get; set; } = DateTime.Now;
+
+        public OrderStatus Status { get; set; }
 
         #region Foreign Key
         [ForeignKey(nameof(User))]
@@ -17,7 +18,8 @@ namespace Data_Layer.Models
         #region Navigation Properties
         public User User { get; set; }
 
-        public List<OrderItems> OrderItems { get; set; }
+        public List<Product> Items { get; set; }
+
         public Payment Payment { get; set; }
         #endregion
     }

@@ -1,14 +1,7 @@
 ﻿using Data_Layer.DTOs;
 using Data_Layer.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 using TradesCore_API.IServices;
 
 namespace TradesCore_API.Controllers

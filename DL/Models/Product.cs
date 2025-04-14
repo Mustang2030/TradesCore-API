@@ -17,18 +17,20 @@ namespace Data_Layer.Models
         public string ImageUrl { get; set; }
 
         #region Foreign Key
-        [ForeignKey(nameof(User))]
-        public string UserId { get; set; }
+        //[ForeignKey(nameof(User))]
+        //public string UserId { get; set; }
         #endregion
 
         #region Navigation Properties
-        public List<CategoryProduct> Categories { get; set; }
+        public List<Category> Categories { get; set; }
 
-        public User User { get; set; }
+        //public User User { get; set; }
 
-        public List<OrderItems>? Orders { get; set; }
+        public List<Order>? Orders { get; set; }
 
         public List<Review> Reviews { get; set; }
+
+        public List<Cart> Carts { get; set; }
         #endregion
     }
 }
