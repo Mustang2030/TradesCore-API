@@ -9,7 +9,7 @@ namespace Data_Layer.Models
 
         public double Amount { get; set; }
 
-        public string PaymentMethod { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
 
         [AllowedValues("Success", "Failed", "Pending")]
         public string Status { get; set; }

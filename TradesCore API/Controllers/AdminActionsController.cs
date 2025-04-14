@@ -23,17 +23,6 @@ namespace TradesCore_API.Controllers
             {
                 return BadRequest(e.Message);
             }
-           
-        }
-
-        public IActionResult Testing()
-        {
-            return Ok();
-        }
-
-        public IActionResult Testing2()
-        {
-            return BadRequest();
         }
     }
 }
