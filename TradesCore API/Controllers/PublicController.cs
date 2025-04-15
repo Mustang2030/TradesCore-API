@@ -7,7 +7,7 @@ namespace TradesCore_API.Controllers
     [ApiController]
     public class PublicController(IPublicRepo publicRepo) : Controller
     {
-        [HttpPost("GetAllCategories")]
+        [HttpGet("GetAllCategories")]
         public IActionResult GetAllCategories()
         {
             try

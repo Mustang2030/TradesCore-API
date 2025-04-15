@@ -2,7 +2,7 @@
   {
     "ContainingType": "TradesCore_API.Controllers.AdminActionsController",
     "Method": "AddCategory",
-    "RelativePath": "api/AdminActions/Category",
+    "RelativePath": "api/AdminActions/AddCategory",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -117,7 +117,7 @@
     "ContainingType": "TradesCore_API.Controllers.PublicController",
     "Method": "GetAllCategories",
     "RelativePath": "api/Public/GetAllCategories",
-    "HttpMethod": "POST",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

@@ -14,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAdminActions, AdminActions>();
+builder.Services.AddScoped<IPublicRepo, PublicRepo>();
 
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi

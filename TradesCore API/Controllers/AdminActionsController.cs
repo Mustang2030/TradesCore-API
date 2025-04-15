@@ -9,7 +9,7 @@ namespace TradesCore_API.Controllers
     public class AdminActionsController(IAdminActions adminActions) : ControllerBase
     {
 
-        [HttpPost("Category")]
+        [HttpPost("AddCategory")]
         public IActionResult AddCategory(CategoryDto request)
         {
             try
