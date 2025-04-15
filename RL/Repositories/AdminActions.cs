@@ -14,7 +14,7 @@ namespace Repository_Layer.Repositories
         {
             try
             {
-                var category = await context.Categories.FirstOrDefaultAsync(c => c.Name == c.Name);
+                var category = await context.Categories.FirstOrDefaultAsync(c => c.Name == request.Name);
                 if (category is not null) throw new($"{request.Name} already exists");
 
                 var newCat = new Category

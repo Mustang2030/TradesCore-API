@@ -112,5 +112,15 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.PublicController",
+    "Method": "GetAllCategories",
+    "RelativePath": "api/Public/GetAllCategories",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]
