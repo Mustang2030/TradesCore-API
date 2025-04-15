@@ -7,9 +7,23 @@ using Repository_Layer.IRepositories;
 
 namespace Repository_Layer.Repositories
 {
+    /// <summary>
+    /// Class for admin actions in the e-commerce system.
+    /// </summary>
+    /// <param name="context">
+    /// The database context used for data access.
+    /// </param>
     public class AdminActions(TradesCoreDbContext context) : IAdminActions
     {
-
+        /// <summary>
+        /// Adds a new category to the database.
+        /// </summary>
+        /// <param name="request">
+        /// The category data transfer object containing the name of the category to be added.
+        /// </param>
+        /// <returns>
+        /// The result of the operation, indicating success or failure.
+        /// </returns>
         public async Task<OperationResult<CategoryDto>> AddCategoryAsync(CategoryDto request)
         {
             try

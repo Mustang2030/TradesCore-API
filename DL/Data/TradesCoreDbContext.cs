@@ -3,16 +3,52 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Data_Layer.Data
 {
+    /// <summary>
+    /// Represents the database context for the e-commerce application.
+    /// </summary>
     public class TradesCoreDbContext(DbContextOptions<TradesCoreDbContext> options) : DbContext(options)
     {
+        /// <summary>
+        /// DbSet representing the Users table in the database.
+        /// </summary>
         public DbSet<User> Users { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Products table in the database.
+        /// </summary>
         public DbSet<Product> Products { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Carts table in the database.
+        /// </summary>
         public DbSet<Cart> Carts { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Categories table in the database.
+        /// </summary>
         public DbSet<Category> Categories { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Orders table in the database.
+        /// </summary>
         public DbSet<Order> Orders { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Payments table in the database.
+        /// </summary>
         public DbSet<Payment> Payments { get; set; }
+
+        /// <summary>
+        /// DbSet representing the Reviews table in the database.
+        /// </summary>
         public DbSet<Review> Reviews { get; set; }
 
+        /// <summary>
+        /// Configures the model for the database context.
+        /// </summary>
+        /// <param name="modelBuilder">
+        /// <see cref="ModelBuilder"/> object used to configure the model.
+        /// </param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>(product =>
