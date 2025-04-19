@@ -2,27 +2,17 @@
   {
     "ContainingType": "TradesCore_API.Controllers.AdminActionsController",
     "Method": "AddCategory",
-    "RelativePath": "api/AdminActions/Category",
+    "RelativePath": "api/AdminActions/add-category",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Data_Layer.DTOs.CategoryDto",
+        "Name": "category",
+        "Type": "Data_Layer.Models.Category",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TradesCore_API.Controllers.AuthController",
-    "Method": "AuthenticatedOnlyEndPoit",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -44,8 +34,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
-        "Type": "Data_Layer.DTOs.UserDto",
+        "Name": "data",
+        "Type": "Data_Layer.DTOs.SignInDto",
         "IsRequired": true
       }
     ],
@@ -75,17 +65,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Data_Layer.DTOs.TokenResponseDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
@@ -99,19 +79,24 @@
         "Name": "request",
         "Type": "Data_Layer.DTOs.UserDto",
         "IsRequired": true
+      },
+      {
+        "Name": "password",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Data_Layer.Models.User",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AuthController",
+    "Method": "AuthenticatedOnlyEndPoit",
+    "RelativePath": "api/Auth/registerd-users-only",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "TradesCore_API.Controllers.PublicController",

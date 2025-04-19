@@ -31,17 +31,17 @@
         /// <summary>
         /// Navigation property to the User table.
         /// </summary>
-        public User User { get; set; }
+        public TradesCoreUser? User { get; set; }
 
         /// <summary>
         /// Navigation property to the Product table.
         /// </summary>
-        public List<Product> Items { get; set; }
+        public List<Product>? Items { get; set; }
 
         /// <summary>
         /// Navigation property to the Payment table.
         /// </summary>
-        public Payment Payment { get; set; }
+        public Payment? Payment { get; set; }
         #endregion
     }
 }

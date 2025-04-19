@@ -1,47 +1,81 @@
-﻿using Data_Layer.DTOs;
+﻿using AutoMapper;
+using Data_Layer.DTOs;
 using Data_Layer.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TradesCore_API.IServices;
+using Repository_Layer.IRepositories;
+using Service_Layer.TokenResponseService;
 
 namespace TradesCore_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(IAuthService authService) : ControllerBase
+    public class AuthController(IAuthRepo authService, IMapper mapper) : ControllerBase
     {
+        private const string accessToken = "access_token";
+        
+        private readonly CookieOptions cookieOptions = new()
+        {
+            HttpOnly = false,
+            Secure = true,
+            SameSite = SameSiteMode.Lax,
+            Expires = DateTimeOffset.UtcNow.AddMinutes(30)
+        };
 
         [HttpPost("register")]
-        public async Task<ActionResult<User>> Register(UserDto request) 
+        public async Task<IActionResult> Register(UserDto request, string password) 
         {
-            var user = await authService.RegisterAsync(request);
-            if (user is null)
-                return BadRequest("Username already exists.");
+            try
+            {
+                var result = await authService.RegisterAsync(mapper.Map<TradesCoreUser>(request), password);
+                if (!result.Success) return BadRequest(result.ErrorMessage);
 
-            return Ok(user);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("login")]
-        public async Task<ActionResult<TokenResponseDto>> Login(UserDto request)
+        public async Task<ActionResult<TokenResponseDto>> Login(SignInDto data)
         {
-            var response = await authService.LoginAsync(request);
-            if (response is null)
-                return BadRequest("Invalid username or password");
-            return Ok(response);
+            try
+            {
+                var result = await authService.LoginAsync(data);
+                if (!result.Success) return BadRequest(result.ErrorMessage);
+
+                HttpContext.Response.Cookies.Append(accessToken, result.Data!.AccessToken, cookieOptions);
+
+                return Ok(result.Data.RefreshToken!.Token);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost("refresh-token")]
-        public async Task<ActionResult<TokenResponseDto>> RefreshToken(RefreshTokenRequestDto request)
+        public async Task<IActionResult> RefreshToken(RefreshTokenRequestDto request)
         {
-            var result = await authService.RefreshTokensAsync(request);
-            if (result is null || result.AccessToken is null || result.RefreshToken is null)
-                return Unauthorized("Invalid refresh token");
+            try
+            {
+                var result = await authService.RefreshTokenAsync(request);
+                if (!result.Success) return BadRequest(result.ErrorMessage);
 
-            return Ok(result);
+                HttpContext.Response.Cookies.Append(accessToken, result.Data!.AccessToken, cookieOptions);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [Authorize]
-        [HttpGet]
+        [HttpGet("registerd-users-only")]
         public IActionResult AuthenticatedOnlyEndPoit()
         {
             return Ok("You are authenticated");

@@ -22,3 +22,9 @@ C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\refint\Service Layer.dll
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.pdb
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\ref\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service Layer.csproj.AssemblyReference.cache
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Data Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Repository Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Data Layer.pdb
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\bin\Debug\net9.0\Repository Layer.pdb
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\Service Layer\obj\Debug\net9.0\Service .3A89A60B.Up2Date

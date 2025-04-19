@@ -515,3 +515,15 @@ C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\obj\Debug\net9.0\r
 C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\obj\Debug\net9.0\TradesCore API.pdb
 C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\obj\Debug\net9.0\TradesCore API.genruntimeconfig.cache
 C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\obj\Debug\net9.0\ref\TradesCore API.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\System.Formats.Asn1.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\System.Text.Json.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Service Layer.dll
+C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Service Layer.pdb

@@ -1,18 +1,14 @@
 ﻿using Data_Layer.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Data_Layer.Data
 {
     /// <summary>
     /// Represents the database context for the e-commerce application.
     /// </summary>
-    public class TradesCoreDbContext(DbContextOptions<TradesCoreDbContext> options) : DbContext(options)
+    public class TradesCoreDbContext(DbContextOptions<TradesCoreDbContext> options) : IdentityDbContext<TradesCoreUser>(options)
     {
-        /// <summary>
-        /// DbSet representing the Users table in the database.
-        /// </summary>
-        public DbSet<User> Users { get; set; }
-
         /// <summary>
         /// DbSet representing the Products table in the database.
         /// </summary>
@@ -44,6 +40,11 @@ namespace Data_Layer.Data
         public DbSet<Review> Reviews { get; set; }
 
         /// <summary>
+        /// DbSet representing the RefreshTokens table in the database.
+        /// </summary>
+        public DbSet<RefreshToken> RefreshTokens { get; set; }
+
+        /// <summary>
         /// Configures the model for the database context.
         /// </summary>
         /// <param name="modelBuilder">
@@ -51,6 +52,8 @@ namespace Data_Layer.Data
         /// </param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Product>(product =>
             {
                 product.HasKey(p => p.Id);
@@ -98,7 +101,8 @@ namespace Data_Layer.Data
                 review.HasOne(u => u.User)
                       .WithMany(r => r.Reviews)
                       .HasForeignKey(k => k.UserId)
-                      .OnDelete(DeleteBehavior.NoAction);
+                      .OnDelete(DeleteBehavior.Cascade)
+                      .IsRequired();
             });
                 
 
@@ -111,6 +115,12 @@ namespace Data_Layer.Data
                      .HasForeignKey<Payment>(payment => payment.OrderId)
                      .OnDelete(DeleteBehavior.Restrict);
 
+                order.HasOne(user => user.User)
+                     .WithMany(orders => orders.Orders)
+                     .HasForeignKey(order => order.UserId)
+                     .OnDelete(DeleteBehavior.Restrict)
+                     .IsRequired();
+
                 order.HasMany(products => products.Items)
                      .WithMany(orders => orders.Orders)
                      .UsingEntity(oi => oi.ToTable("OrderItems"));
@@ -120,22 +130,17 @@ namespace Data_Layer.Data
                      .HasDefaultValue(OrderStatus.Pending);
             });
 
-            modelBuilder.Entity<User>(user =>
+            modelBuilder.Entity<TradesCoreUser>(user =>
             {
-                user.HasKey(u => u.Id);
-
-                user.HasMany(orders => orders.Orders)
+                user.HasOne(token => token.RefreshToken)
                     .WithOne(user => user.User)
-                    .HasForeignKey(orders => orders.UserId)
-                    .OnDelete(DeleteBehavior.Restrict);
-
-                user.HasMany(reviews => reviews.Reviews)
-                    .WithOne(user => user.User)
-                    .HasForeignKey(review => review.UserId)
+                    .HasForeignKey<RefreshToken>(token => token.UserId)
                     .OnDelete(DeleteBehavior.Cascade)
                     .IsRequired();
-            });
 
+                user.Property(u => u.UserName)
+                    .HasComputedColumnSql("CONCAT(FirstName, '_', LastName)");
+            });
         }
     }
 }

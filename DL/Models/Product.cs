@@ -1,4 +1,6 @@
-﻿namespace Data_Layer.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Data_Layer.Models
 {
     /// <summary>
     /// Represents a product in the e-commerce system.
@@ -48,7 +50,7 @@
         /// <summary>
         /// Navigation Property to the Category table.
         /// </summary>
-        public List<Category> Categories { get; set; }
+        public List<Category>? Categories { get; set; }
 
         //public User User { get; set; }
 
@@ -60,12 +62,13 @@
         /// <summary>
         /// Navigation property to the Payment table.
         /// </summary>
-        public List<Review> Reviews { get; set; }
+        public List<Review>? Reviews { get; set; }
 
         /// <summary>
         /// Navigation property to the Cart table.
         /// </summary>
-        public List<Cart> Carts { get; set; }
+        [JsonIgnore]
+        public List<Cart>? Carts { get; set; }
         #endregion
     }
 }

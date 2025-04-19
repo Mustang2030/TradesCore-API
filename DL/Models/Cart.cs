@@ -1,4 +1,6 @@
-﻿namespace Data_Layer.Models
+﻿using System.Text.Json.Serialization;
+
+namespace Data_Layer.Models
 {
     /// <summary>
     /// Represents a shopping cart for a user.
@@ -21,12 +23,13 @@
         /// <summary>
         /// Navigation property to the User table.
         /// </summary>
-        public User User { get; set; }
+        [JsonIgnore]
+        public TradesCoreUser? User { get; set; }
 
         /// <summary>
         /// Navigation property to the Product table.
         /// </summary>
-        public List<Product> Items { get;set; }
+        public List<Product>? Items { get;set; }
         #endregion
     }
 }

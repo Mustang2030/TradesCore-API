@@ -41,7 +41,7 @@
         /// <summary>
         /// Navigation property to the Order table.
         /// </summary>
-        public Order Order { get; set; }
+        public Order? Order { get; set; }
         #endregion
     }
 }

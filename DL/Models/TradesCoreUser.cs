@@ -1,15 +1,14 @@
-﻿namespace Data_Layer.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
+
+namespace Data_Layer.Models
 {
     /// <summary>
     /// Represents a user in the e-commerce system.
     /// </summary>
-    public class User
+    public class TradesCoreUser : IdentityUser
     {
-        /// <summary>
-        /// Unique identifier for the user.
-        /// </summary>
-        public string Id { get; set; } = Guid.NewGuid().ToString();
-
         /// <summary>
         /// The first name of the user.
         /// </summary>
@@ -20,10 +19,7 @@
         /// </summary>
         public string LastName { get; set; }
 
-        /// <summary>
-        /// The email address of the user.
-        /// </summary>
-        public string Email { get; set; }
+        public override string UserName => $"{FirstName}_{LastName}";
 
         /// <summary>
         /// The role of the user (e.g., Admin, Customer).
@@ -38,21 +34,13 @@
         /// <summary>
         /// Navigation Property to the Order table.
         /// </summary>
-        public List<Order> Orders { get; set; }
+        public List<Order>? Orders { get; set; }
 
         /// <summary>
         /// Navigation Property to the Cart table.
         /// </summary>
-        public Cart Cart { get; set; }
+        public Cart? Cart { get; set; }
 
-        /// <summary>
-        /// The refresh token for the user.
-        /// </summary>
-        public string? RefreshToken { get; set; }
-
-        /// <summary>
-        /// The date and time when the refresh token will expire.
-        /// </summary>
-        public DateTime? RefreshTokenExpiryTime { get; set; }
+        public RefreshToken? RefreshToken { get; set; }
     }
 }

@@ -19,6 +19,6 @@
         /// <summary>
         /// Navigation Property of the products associated with this category.
         /// </summary>
-        public List<Product> Products { get; set; }
+        public List<Product>? Products { get; set; }
     }   
 }

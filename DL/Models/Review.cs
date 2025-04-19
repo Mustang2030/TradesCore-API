@@ -48,7 +48,7 @@ namespace Data_Layer.Models
         /// <summary>
         /// Navigation property to the User table.
         /// </summary>
-        public User User { get; set; }
+        public TradesCoreUser? User { get; set; }
 
         /// <summary>
         /// Navigation property to the Product table.
