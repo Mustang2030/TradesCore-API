@@ -1,16 +1,16 @@
-﻿using AutoMapper;
-using Data_Layer.DTOs;
-using Data_Layer.Models;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
 using Repository_Layer.IRepositories;
-using Service_Layer.TokenResponseService;
+using Microsoft.AspNetCore.Mvc;
+using Data_Layer.Models;
+using Data_Layer.DTOs;
+using AutoMapper;
+using System.Linq.Expressions;
 
 namespace TradesCore_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(IAuthRepo authService, IMapper mapper) : ControllerBase
+    public class AuthController(IAuthRepo authRepo, IMapper mapper) : ControllerBase
     {
         private const string accessToken = "access_token";
         
@@ -27,7 +27,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = await authService.RegisterAsync(mapper.Map<TradesCoreUser>(request), password);
+                var result = await authRepo.RegisterAsync(mapper.Map<TradesCoreUser>(request), password);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();
@@ -43,7 +43,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = await authService.LoginAsync(data);
+                var result = await authRepo.LoginAsync(data);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 HttpContext.Response.Cookies.Append(accessToken, result.Data!.AccessToken, cookieOptions);
@@ -61,7 +61,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = await authService.RefreshTokenAsync(request);
+                var result = await authRepo.RefreshTokenAsync(request);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 HttpContext.Response.Cookies.Append(accessToken, result.Data!.AccessToken, cookieOptions);
@@ -74,18 +74,20 @@ namespace TradesCore_API.Controllers
             }
         }
 
-        [Authorize]
-        [HttpGet("registerd-users-only")]
-        public IActionResult AuthenticatedOnlyEndPoit()
+        [HttpGet("confirm-email")]
+        public async Task<IActionResult> ConfirmEmail(string userId, string value)
         {
-            return Ok("You are authenticated");
-        }
+            try
+            {
+                var result = await authRepo.ConfirmEmailAsync(userId, value);
+                if (!result.Success) return BadRequest(result.ErrorMessage);
 
-        [Authorize(Roles = "Admin")]
-        [HttpGet("admin-only")]
-        public IActionResult AdminOnlyEndpoint()
-        {
-            return Ok("You are an Admin");
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ namespace TradesCore_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminActionsController(IAdminActions adminActions) : ControllerBase
+    public class AdminActionsController(ICategoryRepo adminActions) : ControllerBase
     {
 
         [HttpPost("add-category")]

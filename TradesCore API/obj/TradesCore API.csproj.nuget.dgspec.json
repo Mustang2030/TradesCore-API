@@ -133,6 +133,9 @@
             "projectReferences": {
               "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data Layer.csproj": {
                 "projectPath": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data Layer.csproj"
+              },
+              "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\Service Layer\\Service Layer.csproj": {
+                "projectPath": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\Service Layer\\Service Layer.csproj"
               }
             }
           }
@@ -216,9 +219,6 @@
             "projectReferences": {
               "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data Layer.csproj": {
                 "projectPath": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\DL\\Data Layer.csproj"
-              },
-              "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repository Layer.csproj": {
-                "projectPath": "C:\\Users\\Lukhanyo\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repository Layer.csproj"
               }
             }
           }
@@ -246,6 +246,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.3.0, )"
             }
           },
           "imports": [

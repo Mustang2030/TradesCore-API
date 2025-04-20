@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Layer.Migrations
 {
     [DbContext(typeof(TradesCoreDbContext))]
-    [Migration("20250419123800_Initial")]
+    [Migration("20250420011633_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -78,6 +78,7 @@ namespace Data_Layer.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

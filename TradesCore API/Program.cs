@@ -1,13 +1,16 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc.Routing;
 using System.Text.Json.Serialization;
 using Microsoft.IdentityModel.Tokens;
 using Repository_Layer.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Repository_Layer.Repositories;
+using Service_Layer.EmailService;
 using TradesCore_API.Utilities;
-using Data_Layer.Models;
+using Service_Layer.IEmail;
 using Data_Layer.Mappings;
+using Data_Layer.Models;
 using Scalar.AspNetCore;
 using Data_Layer.Data;
 using System.Text;
@@ -16,15 +19,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddScoped<IAuthRepo, AuthRepo>();
-builder.Services.AddScoped<IAdminActions, AdminActions>();
+builder.Services.AddScoped<ICategoryRepo, CategoryRepo>();
 builder.Services.AddScoped<IPublicRepo, PublicRepo>();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
+builder.Services.AddScoped<IEmailService, EmailServices>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
 
 builder.Services.AddControllers().AddJsonOptions(options => 
     {
         options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
         options.JsonSerializerOptions.WriteIndented = true;
     });
+
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 

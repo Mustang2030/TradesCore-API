@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "DeleteUser",
+    "RelativePath": "api/Account/delete-user",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TradesCore_API.Controllers.AdminActionsController",
     "Method": "AddCategory",
     "RelativePath": "api/AdminActions/add-category",
@@ -17,12 +33,23 @@
   },
   {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
-    "Method": "AdminOnlyEndpoint",
-    "RelativePath": "api/Auth/admin-only",
+    "Method": "ConfirmEmail",
+    "RelativePath": "api/Auth/confirm-email",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -86,16 +113,6 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TradesCore_API.Controllers.AuthController",
-    "Method": "AuthenticatedOnlyEndPoit",
-    "RelativePath": "api/Auth/registerd-users-only",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

@@ -1,7 +1,17 @@
-﻿using Data_Layer.Models;
-using Repository_Layer.Repositories;
+﻿using static Service_Layer.ResultService.ResultService;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
+using Data_Layer.Models;
+
+
+/*{
+  "firstName": "Test",
+  "lastName": "Case",
+  "username": null,
+  "email": "lukhanyomayekiso98@gmail.com",
+  "phoneNumber": "0785263698",
+  "role": "Customer"
+}*/
 
 namespace TradesCore_API.Utilities
 {
@@ -47,13 +57,13 @@ namespace TradesCore_API.Utilities
             {
                 if (userManager.FindByEmailAsync(adminUser.Email!).Result == null)
                 {
-                    var result = AuthRepo.IdResult(userManager.CreateAsync(adminUser, "Admin101!").Result);
+                    var result = IdResult(userManager.CreateAsync(adminUser, "Admin101!").Result);
                     if (!result.Success) throw new(result.ErrorMessage);
 
-                    result = AuthRepo.IdResult(userManager.AddToRoleAsync(adminUser, adminUser.Role).Result);
+                    result = IdResult(userManager.AddToRoleAsync(adminUser, adminUser.Role).Result);
                     if (!result.Success) throw new(result.ErrorMessage);
 
-                    result = AuthRepo.IdResult(userManager.AddClaimsAsync(adminUser,
+                    result = IdResult(userManager.AddClaimsAsync(adminUser,
                     [
                         new Claim("username", adminUser.UserName!),
                         new Claim("id", adminUser.Id),

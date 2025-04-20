@@ -1,15 +1,18 @@
-﻿using Data_Layer.Data;
-using Data_Layer.DTOs;
-using Data_Layer.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Repository_Layer.IRepositories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
+using static Service_Layer.ResultService.ResultService;
+using System.Text.Encodings.Web;
 using System.Security.Claims;
 using Data_Layer.Utilities;
+using Service_Layer.IEmail;
+using Data_Layer.Models;
+using Data_Layer.Data;
+using Data_Layer.DTOs;
 using System.Text;
 
 namespace Repository_Layer.Repositories
@@ -26,7 +29,7 @@ namespace Repository_Layer.Repositories
     /// <param name="configuration">
     /// The configuration object used for accessing application settings.
     /// </param>
-    public class AuthRepo(TradesCoreDbContext context, SignInManager<TradesCoreUser> signInManager, IConfiguration configuration) : IAuthRepo
+    public class AuthRepo(TradesCoreDbContext context, SignInManager<TradesCoreUser> signInManager, IEmailSender emailSender, IEmailService emailService, IConfiguration configuration) : IAuthRepo
     {
         /// <summary>
         /// Token creation failure message.
@@ -62,24 +65,32 @@ namespace Repository_Layer.Repositories
         }
 
         /// <summary>
-        /// Method to process the results <see cref="IdentityResult"/> operation.
+        /// Method to generate and send an email verification token to a user.
         /// </summary>
-        /// <param name="result">
-        /// The <see cref="IdentityResult"/> to process.
+        /// <param name="user">
+        /// The user to whom the verification token will be sent.
         /// </param>
         /// <returns>
-        /// An <see cref="OperationResult{T}"/> containing the result of the operation.
+        /// The result of the operation.
         /// </returns>
-        public static OperationResult<IdentityResult> IdResult(IdentityResult result)
+        private async Task<OperationResult<EmailSettings>> SendConfirmationEmailAsync(TradesCoreUser user)
         {
-            if (result.Succeeded)
+            try
             {
-                return OperationResult<IdentityResult>.SuccessResult();
+                var token = await signInManager.UserManager.GenerateEmailConfirmationTokenAsync(user);
+
+                var linkResult = emailService.GenerateLink(user.Id, token);
+                if (!linkResult.Success) throw new(linkResult.ErrorMessage);
+
+                return await emailSender.SendEmailAsync(user.Email!, "TradesCore Email Verification",
+                    $"Hi {user.FirstName},<br>"+
+                    $"Your account with TradesCore has been successfully created. " +
+                    $"Please verify your email by <a href='{HtmlEncoder.Default.Encode(linkResult.Data!)}'>clicking here</a>."
+                );
             }
-            else
+            catch (Exception ex)
             {
-                var errors = string.Join(", ", result.Errors.Select(err => err.Description));
-                return OperationResult<IdentityResult>.Failure($"Failed to create user: {errors}");
+                return OperationResult<EmailSettings>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -119,6 +130,39 @@ namespace Repository_Layer.Repositories
                     new Claim(ClaimTypes.MobilePhone, newUser.PhoneNumber!),
                     new Claim(ClaimTypes.Role, newUser.Role)
                 ]));
+                if (!result.Success) throw new(result.ErrorMessage);
+
+                var emailResult = await SendConfirmationEmailAsync(newUser);
+                if (!emailResult.Success) throw new(emailResult.ErrorMessage);
+
+                return OperationResult<TradesCoreUser>.SuccessResult();
+            }
+            catch (Exception ex)
+            {
+                return OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Receives an email verification token and uses it to verify the user's email address. 
+        /// </summary>
+        /// <param name="userId">
+        /// The unique id of the user whose email address is being verified.
+        /// </param>
+        /// <param name="verificationToken">
+        /// The verification token with which to verify the email address.
+        /// </param>
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        public async Task<OperationResult<TradesCoreUser>> ConfirmEmailAsync(string userId, string verificationToken)
+        {
+            try
+            {
+                var user = await context.Users.FindAsync(userId) ??
+                    throw new("User not found!");
+
+                var result = IdResult(await signInManager.UserManager.ConfirmEmailAsync(user, verificationToken));
                 if (!result.Success) throw new(result.ErrorMessage);
 
                 return OperationResult<TradesCoreUser>.SuccessResult();

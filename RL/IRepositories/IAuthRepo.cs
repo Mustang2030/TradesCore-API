@@ -44,5 +44,19 @@ namespace Repository_Layer.IRepositories
         /// The result of the token refresh operation, including the new access and refresh tokens if successful.
         /// </returns>
         Task<OperationResult<TokenResponseDto>> RefreshTokenAsync(RefreshTokenRequestDto request);
+
+        /// <summary>
+        /// Receives an email verification token and uses it to verify the user's email address. 
+        /// </summary>
+        /// <param name="userId">
+        /// The unique id of the user whose email address is being verified.
+        /// </param>
+        /// <param name="verificationToken">
+        /// The verification token with which to verify the email address.
+        /// </param>
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        Task<OperationResult<TradesCoreUser>> ConfirmEmailAsync(string userId, string verificationToken);
     }
 }
