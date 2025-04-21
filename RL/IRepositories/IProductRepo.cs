@@ -11,10 +11,10 @@ namespace Repository_Layer.IRepositories
 {
     public interface IProductRepo
     {
-        Task<OperationResult<Product>> AddProductAsync(ProductDto product);
+        Task<OperationResult<Product>> AddProductAsync(Product product);
         Task<OperationResult<Product>> GetProductAsync(string id);
         Task<OperationResult<List<Product>>> GetAllProductAsync();
-        Task<OperationResult<Product>> UpdateProductAsync(ProductDto productDto);
+        Task<OperationResult<Product>> UpdateProductAsync(Product productDto);
         Task<OperationResult<Product>> DeleteProductAsync(string id);
     }
 }

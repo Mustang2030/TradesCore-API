@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b916fdb3df72ad0fb7732025bb7153ceefa052f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2ca602d459fd6ed1915bbc0da0017b856166826")]
 [assembly: System.Reflection.AssemblyProductAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TradesCore API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

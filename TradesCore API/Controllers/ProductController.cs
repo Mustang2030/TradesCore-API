@@ -1,21 +1,24 @@
-﻿using Data_Layer.DTOs;
+﻿using AutoMapper;
+using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Repository_Layer.IRepositories;
+using System.Threading.Tasks;
 
 namespace TradesCore_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController(IProductRepo productRepo) : ControllerBase
+    public class ProductController(IProductRepo productRepo, IMapper mapper) : ControllerBase
     {
         [HttpPost("Add")]
-        public IActionResult Add(ProductDto product)
+        public async Task<IActionResult> Add(ProductDto product)
         {
             try
             {
-                var result = productRepo.AddProductAsync(product).Result;
+                var result = await productRepo.AddProductAsync(mapper.Map<Product>(productRepo));
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();
@@ -27,11 +30,11 @@ namespace TradesCore_API.Controllers
         }
 
         [HttpGet("GetById")]
-        public IActionResult GetById(ProductDto product)
+        public async Task<IActionResult> GetById(string id)
         {
             try
             {
-                var result = productRepo.GetProductAsync(product.Id).Result;
+                var result = await productRepo.GetProductAsync(id);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok(result.Data);
@@ -59,11 +62,11 @@ namespace TradesCore_API.Controllers
         }
 
         [HttpPut("Update")]
-        public IActionResult Update(ProductDto product)
+        public async Task<IActionResult> Update(Product product)
         {
             try
             {
-                var result = productRepo.UpdateProductAsync(product).Result;
+                var result = await productRepo.UpdateProductAsync(mapper.Map<ProductDto>(product);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();
@@ -75,11 +78,11 @@ namespace TradesCore_API.Controllers
         }
 
         [HttpDelete("Delete")]
-        public IActionResult Delete(ProductDto product)
+        public IActionResult Delete(string id)
         {
             try
             {
-                var result = productRepo.DeleteProductAsync(product.Id).Result;
+                var result = productRepo.DeleteProductAsync(id).Result;
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();

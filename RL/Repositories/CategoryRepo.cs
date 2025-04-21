@@ -24,19 +24,14 @@ namespace Repository_Layer.Repositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public async Task<OperationResult<Category>> AddCategoryAsync(CategoryDto category)
+        public async Task<OperationResult<Category>> AddCategoryAsync(Category category)
         {
             try
             {
                 if (await context.Categories.AnyAsync(c => c.Name == category.Name))
                     throw new($"{category.Name} already exists");
 
-                var cat = new Category
-                {
-                    Name = category.Name
-                };
-
-                await context.AddAsync(cat);
+                await context.AddAsync(category);
                 await context.SaveChangesAsync();
 
                 return OperationResult<Category>.SuccessResult();
@@ -99,7 +94,7 @@ namespace Repository_Layer.Repositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public async Task<OperationResult<Category>> UpdateCategoryAsync(CategoryDto category)
+        public async Task<OperationResult<Category>> UpdateCategoryAsync(Category category)
         {
             try
             {
@@ -111,7 +106,7 @@ namespace Repository_Layer.Repositories
                 context.Update(existingCategory);
                 await context.SaveChangesAsync();
 
-                return OperationResult<Category>.SuccessResult(existingCategory);
+                return OperationResult<Category>.SuccessResult();
             }
             catch (Exception ex)
             {

@@ -7,24 +7,11 @@
       "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\tradescore api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{817F50AC-8369-4B5B-8CD6-2EEBF8B4354E}|TradesCore API\\TradesCore API.csproj|solutionrelative:tradescore api\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_7JIHDN0_SQLEXPRESS/TradesCoreDb/True/SqlTable/dbo.Categories.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\rl\\repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|solutionrelative:rl\\repositories\\productrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\rl\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|solutionrelative:rl\\repositories\\categoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\rl\\irepositories\\iproductrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|solutionrelative:rl\\irepositories\\iproductrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\rl\\irepositories\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DB7D84F-B17E-4958-9804-E6D413F41205}|RL\\Repository Layer.csproj|solutionrelative:rl\\irepositories\\icategoryrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|c:\\users\\tsoai\\desktop\\git repo\\tradescore-api\\dl\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB7DBA55-7B51-4236-B614-EAA65DE5561C}|DL\\Data Layer.csproj|solutionrelative:dl\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +21,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -60,48 +47,32 @@
               "RelativeDocumentMoniker": "TradesCore API\\Controllers\\CategoryController.cs",
               "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Controllers\\CategoryController.cs",
               "RelativeToolTip": "TradesCore API\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAswE0AAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:17:20.45Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "TradesCore API\\Controllers\\ProductController.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\TradesCore API\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "TradesCore API\\Controllers\\ProductController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAAAEwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:15:44.56Z",
+              "WhenOpened": "2025-04-21T09:51:10.321Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProductRepo.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\ProductRepo.cs",
-              "RelativeDocumentMoniker": "RL\\Repositories\\ProductRepo.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\ProductRepo.cs",
-              "RelativeToolTip": "RL\\Repositories\\ProductRepo.cs",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAGoAAAAgAAAAAAAAAA==",
+              "Title": "MappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\DL\\Mappings\\MappingProfile.cs",
+              "RelativeDocumentMoniker": "DL\\Mappings\\MappingProfile.cs",
+              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\DL\\Mappings\\MappingProfile.cs",
+              "RelativeToolTip": "DL\\Mappings\\MappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:13:17.729Z",
+              "WhenOpened": "2025-04-21T09:47:21.851Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IProductRepo.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\IRepositories\\IProductRepo.cs",
-              "RelativeDocumentMoniker": "RL\\IRepositories\\IProductRepo.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\IRepositories\\IProductRepo.cs",
-              "RelativeToolTip": "RL\\IRepositories\\IProductRepo.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:12:35.379Z",
+              "DocumentIndex": 1,
+              "Title": "dbo.Categories [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_7JIHDN0_SQLEXPRESS/TradesCoreDb/True/SqlTable/dbo.Categories.sql",
+              "ToolTip": "dbo.Categories [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-21T09:44:40.793Z",
               "EditorCaption": ""
             }
           ]
@@ -117,53 +88,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "c90d4bcf-5be0-41ed-9602-ef3971374596",
-        "Display": 1,
-        "X": -56,
-        "Y": 2,
-        "Width": 1051,
-        "Height": 535,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoryRepo.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\CategoryRepo.cs",
-              "RelativeDocumentMoniker": "RL\\Repositories\\CategoryRepo.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\Repositories\\CategoryRepo.cs",
-              "RelativeToolTip": "RL\\Repositories\\CategoryRepo.cs",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAqwIwAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:12:20.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICategoryRepo.cs",
-              "DocumentMoniker": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\IRepositories\\ICategoryRepo.cs",
-              "RelativeDocumentMoniker": "RL\\IRepositories\\ICategoryRepo.cs",
-              "ToolTip": "C:\\Users\\tsoai\\Desktop\\Git Repo\\TradesCore-API\\RL\\IRepositories\\ICategoryRepo.cs",
-              "RelativeToolTip": "RL\\IRepositories\\ICategoryRepo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T06:12:09.809Z",
-              "EditorCaption": ""
             }
           ]
         }

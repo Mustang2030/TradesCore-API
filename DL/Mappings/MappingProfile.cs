@@ -10,6 +10,12 @@ namespace Data_Layer.Mappings
         {
             CreateMap<TradesCoreUser, UserDto>();
             CreateMap<UserDto, TradesCoreUser>();
+
+            CreateMap<Category, CategoryDto>();
+            CreateMap<CategoryDto, Category>();
+
+            CreateMap<Product, ProductDto>();
+            CreateMap<ProductDto, Product>();
         }
     }
 }

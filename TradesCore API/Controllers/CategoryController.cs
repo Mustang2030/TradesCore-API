@@ -1,21 +1,24 @@
-﻿using Data_Layer.DTOs;
+﻿using AutoMapper;
+using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Repository_Layer.IRepositories;
 using Repository_Layer.Repositories;
+using System.Threading.Tasks;
 
 namespace TradesCore_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoryController(ICategoryRepo categoryRepo) : ControllerBase
+    public class CategoryController(ICategoryRepo categoryRepo, IMapper mapper) : ControllerBase
     {
         [HttpPost("Add")]
-        public IActionResult Add(CategoryDto category)
+        public async Task<IActionResult> Add(CategoryDto category)
         {
             try
             {
-                var result = categoryRepo.AddCategoryAsync(category).Result;
+                var result = await categoryRepo.AddCategoryAsync(mapper.Map<Category>(category));
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();
@@ -27,11 +30,11 @@ namespace TradesCore_API.Controllers
         }
 
         [HttpGet("GetById")]
-        public IActionResult GetById(CategoryDto category)
+        public IActionResult GetById(string id)
         {
             try
             {
-                var result = categoryRepo.GetCategoryAsync(category.Id).Result;
+                var result = categoryRepo.GetCategoryAsync(id).Result;
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok(result.Data);
@@ -63,7 +66,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = categoryRepo.UpdateCategoryAsync(category).Result;
+                var result = categoryRepo.UpdateCategoryAsync(mapper.Map<Category>(category)).Result;
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();

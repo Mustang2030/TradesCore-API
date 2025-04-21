@@ -18,7 +18,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<Category>> AddCategoryAsync(CategoryDto category);
+        Task<OperationResult<Category>> AddCategoryAsync(Category category);
 
         /// <summary>
         /// Retrieves a category with the specified id.
@@ -48,7 +48,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<Category>> UpdateCategoryAsync(CategoryDto category);
+        Task<OperationResult<Category>> UpdateCategoryAsync(Category category);
         
         /// <summary>
         /// Deletes an existing category.

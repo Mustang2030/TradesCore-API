@@ -150,9 +150,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "category",
-        "Type": "Data_Layer.DTOs.CategoryDto",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

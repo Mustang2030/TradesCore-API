@@ -14,24 +14,24 @@ namespace Repository_Layer.Repositories
 {
     public class ProductRepo(TradesCoreDbContext context) : IProductRepo
     {
-        public async Task<OperationResult<Product>> AddProductAsync(ProductDto product)
+        public async Task<OperationResult<Product>> AddProductAsync(Product product)
         {
             try
             {
                 if (await context.Products.AnyAsync(p => p.Name == product.Name))
                     throw new($"{product.Name} already exists");
 
-                var prod = new Product
-                {
-                    Name = product.Name,
-                    Description = product.Description,
-                    Stock = product.Stock,
-                    Price = product.Price,
-                    Categories = product.Categories,
-                    ImageUrl = product.ImageUrl,
-                };
+                //var prod = new Product
+                //{
+                //    Name = product.Name,
+                //    Description = product.Description,
+                //    Stock = product.Stock,
+                //    Price = product.Price,
+                //    Categories = product.Categories,
+                //    ImageUrl = product.ImageUrl,
+                //};
 
-                await context.AddAsync(prod);
+                await context.AddAsync(product);
                 await context.SaveChangesAsync();
 
                 return OperationResult<Product>.SuccessResult();
@@ -71,7 +71,7 @@ namespace Repository_Layer.Repositories
             
         }
 
-        public async Task<OperationResult<Product>> UpdateProductAsync(ProductDto product)
+        public async Task<OperationResult<Product>> UpdateProductAsync(Product product)
         {
             try
             {
