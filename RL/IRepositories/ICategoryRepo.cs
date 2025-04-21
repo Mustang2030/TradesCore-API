@@ -1,4 +1,5 @@
-﻿using Data_Layer.Models;
+﻿using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Data_Layer.Utilities;
 
 namespace Repository_Layer.IRepositories

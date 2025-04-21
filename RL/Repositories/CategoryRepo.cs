@@ -1,4 +1,5 @@
 ﻿using Data_Layer.Data;
+using Data_Layer.DTOs;
 using Data_Layer.Models;
 using Data_Layer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -105,7 +106,7 @@ namespace Repository_Layer.Repositories
                 context.Update(existingCategory);
                 await context.SaveChangesAsync();
 
-                return OperationResult<Category>.SuccessResult(existingCategory);
+                return OperationResult<Category>.SuccessResult();
             }
             catch (Exception ex)
             {
