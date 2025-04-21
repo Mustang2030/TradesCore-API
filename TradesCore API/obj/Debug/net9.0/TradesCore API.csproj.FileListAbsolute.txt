@@ -533,3 +533,19 @@ C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Razor.dll
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\AutoMapper.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Service Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\TradesCore API\bin\Debug\net9.0\Service Layer.pdb

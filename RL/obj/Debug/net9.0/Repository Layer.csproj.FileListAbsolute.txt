@@ -48,3 +48,5 @@ C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\RL\obj\Debug\net9.0\Repository La
 C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\RL\obj\Debug\net9.0\ref\Repository Layer.dll
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\RL\bin\Debug\net9.0\Service Layer.dll
 C:\Users\Lukhanyo\Desktop\Git Repo\TradesCore-API\RL\bin\Debug\net9.0\Service Layer.pdb
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\RL\bin\Debug\net9.0\Service Layer.dll
+C:\Users\tsoai\Desktop\Git Repo\TradesCore-API\RL\bin\Debug\net9.0\Service Layer.pdb

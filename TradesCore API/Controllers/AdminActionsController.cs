@@ -9,20 +9,20 @@ namespace TradesCore_API.Controllers
     public class AdminActionsController(ICategoryRepo adminActions) : ControllerBase
     {
 
-        [HttpPost("add-category")]
-        public IActionResult AddCategory(Category category)
-        {
-            try
-            {
-                var result = adminActions.AddCategoryAsync(category).Result;
-                if (!result.Success) return BadRequest(result.ErrorMessage);
+        //[HttpPost("add-category")]
+        //public IActionResult AddCategory(Category category)
+        //{
+        //    try
+        //    {
+        //        var result = adminActions.AddCategoryAsync(category).Result;
+        //        if (!result.Success) return BadRequest(result.ErrorMessage);
 
-                return Ok();
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+        //        return Ok();
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
+        //    }
+        //}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Data_Layer.Data;
+using Data_Layer.DTOs;
 using Data_Layer.Models;
 using Data_Layer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -23,14 +24,19 @@ namespace Repository_Layer.Repositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public async Task<OperationResult<Category>> AddCategoryAsync(Category category)
+        public async Task<OperationResult<Category>> AddCategoryAsync(CategoryDto category)
         {
             try
             {
                 if (await context.Categories.AnyAsync(c => c.Name == category.Name))
                     throw new($"{category.Name} already exists");
 
-                await context.AddAsync(category);
+                var cat = new Category
+                {
+                    Name = category.Name
+                };
+
+                await context.AddAsync(cat);
                 await context.SaveChangesAsync();
 
                 return OperationResult<Category>.SuccessResult();
@@ -93,7 +99,7 @@ namespace Repository_Layer.Repositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public async Task<OperationResult<Category>> UpdateCategoryAsync(Category category)
+        public async Task<OperationResult<Category>> UpdateCategoryAsync(CategoryDto category)
         {
             try
             {

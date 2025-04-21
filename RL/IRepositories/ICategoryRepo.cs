@@ -1,4 +1,5 @@
-﻿using Data_Layer.Models;
+﻿using Data_Layer.DTOs;
+using Data_Layer.Models;
 using Data_Layer.Utilities;
 
 namespace Repository_Layer.IRepositories
@@ -17,7 +18,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<Category>> AddCategoryAsync(Category category);
+        Task<OperationResult<Category>> AddCategoryAsync(CategoryDto category);
 
         /// <summary>
         /// Retrieves a category with the specified id.
@@ -47,7 +48,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<Category>> UpdateCategoryAsync(Category category);
+        Task<OperationResult<Category>> UpdateCategoryAsync(CategoryDto category);
         
         /// <summary>
         /// Deletes an existing category.

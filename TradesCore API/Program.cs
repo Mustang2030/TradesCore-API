@@ -25,6 +25,8 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();
 builder.Services.AddScoped<IEmailService, EmailServices>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IProductRepo, ProductRepo>();
+
 
 builder.Services.AddControllers().AddJsonOptions(options => 
     {
@@ -39,7 +41,7 @@ builder.Services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<TradesCoreDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("LukhanyoDatabase"))); //Change to proper DB Connection String on your side.
+    options.UseSqlServer(builder.Configuration.GetConnectionString("TradesCoreDatabase"))); //Change to proper DB Connection String on your side.
 
 builder.Services.AddIdentity<TradesCoreUser, IdentityRole>().AddEntityFrameworkStores<TradesCoreDbContext>().AddDefaultTokenProviders();
 
@@ -54,7 +56,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
         ValidAudience = builder.Configuration["AppSettings:Audience"],
         ValidateLifetime = true,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:Token"]!)),
+            Encoding.UTF8.GetBytes(builder.Configuration["Token"]!)),
         ValidateIssuerSigningKey = true,
     };
 });
