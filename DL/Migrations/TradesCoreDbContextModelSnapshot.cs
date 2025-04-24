@@ -83,6 +83,22 @@ namespace Data_Layer.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("Data_Layer.Models.NumberChangeToken", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Code")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Token");
+
+                    b.ToTable("NumberChangeTokens");
+                });
+
             modelBuilder.Entity("Data_Layer.Models.Order", b =>
                 {
                     b.Property<string>("Id")

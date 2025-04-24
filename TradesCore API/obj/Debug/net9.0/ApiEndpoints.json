@@ -1,6 +1,53 @@
 [
   {
     "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "ChangeEmail",
+    "RelativePath": "api/Account/change-email",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "ConfirmNewEmail",
+    "RelativePath": "api/Account/confirm-new-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newEmail",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
     "Method": "DeleteUser",
     "RelativePath": "api/Account/delete-user",
     "HttpMethod": "DELETE",
@@ -29,7 +76,7 @@
         "IsRequired": false
       },
       {
-        "Name": "value",
+        "Name": "token",
         "Type": "System.String",
         "IsRequired": false
       }
@@ -198,9 +245,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "Data_Layer.DTOs.ProductDto",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -224,9 +271,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "Data_Layer.DTOs.ProductDto",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -241,7 +288,7 @@
     "Parameters": [
       {
         "Name": "product",
-        "Type": "Data_Layer.DTOs.ProductDto",
+        "Type": "Data_Layer.Models.Product",
         "IsRequired": true
       }
     ],

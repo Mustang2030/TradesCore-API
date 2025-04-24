@@ -75,11 +75,11 @@ namespace TradesCore_API.Controllers
         }
 
         [HttpGet("confirm-email")]
-        public async Task<IActionResult> ConfirmEmail(string userId, string value)
+        public async Task<IActionResult> ConfirmEmail(string userId, string token)
         {
             try
             {
-                var result = await authRepo.ConfirmEmailAsync(userId, value);
+                var result = await authRepo.ConfirmEmailAsync(userId, token);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();

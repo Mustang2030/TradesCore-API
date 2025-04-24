@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
-using Service_Layer.IEmail;
+using Service_Layer.IEmailService;
 using Data_Layer.Utilities;
 using Data_Layer.Models;
 using System.Net.Mail;

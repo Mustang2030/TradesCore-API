@@ -21,16 +21,6 @@ namespace Repository_Layer.Repositories
                 if (await context.Products.AnyAsync(p => p.Name == product.Name))
                     throw new($"{product.Name} already exists");
 
-                //var prod = new Product
-                //{
-                //    Name = product.Name,
-                //    Description = product.Description,
-                //    Stock = product.Stock,
-                //    Price = product.Price,
-                //    Categories = product.Categories,
-                //    ImageUrl = product.ImageUrl,
-                //};
-
                 await context.AddAsync(product);
                 await context.SaveChangesAsync();
 
@@ -38,7 +28,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception e)
             {
-                return OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Product>.Failure(e.Message) :
+                    OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -51,7 +43,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception e)
             {
-                return OperationResult<List<Product>>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<List<Product>>.Failure(e.Message) :
+                    OperationResult<List<Product>>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -66,9 +60,11 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception e)
             {
-                return OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Product>.Failure(e.Message) :
+                    OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
-            
+
         }
 
         public async Task<OperationResult<Product>> UpdateProductAsync(Product product)
@@ -93,7 +89,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception e)
             {
-                return OperationResult<Product>.Failure(e.Message + "\nInner Exeption: " + e.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Product>.Failure(e.Message) :
+                    OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -109,9 +107,11 @@ namespace Repository_Layer.Repositories
 
                 return OperationResult<Product>.SuccessResult();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return OperationResult<Product>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Product>.Failure(e.Message) :
+                    OperationResult<Product>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
     }

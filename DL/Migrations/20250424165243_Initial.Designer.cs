@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data_Layer.Migrations
 {
     [DbContext(typeof(TradesCoreDbContext))]
-    [Migration("20250421043009_Testing")]
-    partial class Testing
+    [Migration("20250424165243_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,6 +84,22 @@ namespace Data_Layer.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Data_Layer.Models.NumberChangeToken", b =>
+                {
+                    b.Property<string>("Token")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Code")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ExpiryDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Token");
+
+                    b.ToTable("NumberChangeTokens");
                 });
 
             modelBuilder.Entity("Data_Layer.Models.Order", b =>

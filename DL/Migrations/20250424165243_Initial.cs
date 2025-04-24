@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Data_Layer.Migrations
 {
     /// <inheritdoc />
-    public partial class Testing : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -63,6 +63,19 @@ namespace Data_Layer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categories", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "NumberChangeTokens",
+                columns: table => new
+                {
+                    Token = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Code = table.Column<int>(type: "int", nullable: false),
+                    ExpiryDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_NumberChangeTokens", x => x.Token);
                 });
 
             migrationBuilder.CreateTable(
@@ -482,6 +495,9 @@ namespace Data_Layer.Migrations
 
             migrationBuilder.DropTable(
                 name: "CategoryProducts");
+
+            migrationBuilder.DropTable(
+                name: "NumberChangeTokens");
 
             migrationBuilder.DropTable(
                 name: "OrderItems");

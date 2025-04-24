@@ -38,7 +38,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception e)
             {
-                return OperationResult<Category>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Category>.Failure(e.Message) :
+                    OperationResult<Category>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -60,9 +62,11 @@ namespace Repository_Layer.Repositories
 
                 return OperationResult<Category>.SuccessResult(category);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return OperationResult<Category>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Category>.Failure(e.Message) :
+                    OperationResult<Category>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -79,9 +83,11 @@ namespace Repository_Layer.Repositories
                 var categories = await context.Categories.ToListAsync();
                 return OperationResult<List<Category>>.SuccessResult(categories);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return OperationResult<List<Category>>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<List<Category>>.Failure(e.Message) :
+                    OperationResult<List<Category>>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -108,9 +114,11 @@ namespace Repository_Layer.Repositories
 
                 return OperationResult<Category>.SuccessResult();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return OperationResult<Category>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Category>.Failure(e.Message) :
+                    OperationResult<Category>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
 
@@ -135,9 +143,11 @@ namespace Repository_Layer.Repositories
 
                 return OperationResult<Category>.SuccessResult();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                return OperationResult<Category>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return e.InnerException is null ?
+                    OperationResult<Category>.Failure(e.Message) :
+                    OperationResult<Category>.Failure(e.Message + "\nInner Exception: " + e.InnerException);
             }
         }
     }

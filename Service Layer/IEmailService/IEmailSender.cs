@@ -1,7 +1,7 @@
 ﻿using Data_Layer.Models;
 using Data_Layer.Utilities;
 
-namespace Service_Layer.IEmail
+namespace Service_Layer.IEmailService
 {
     public interface IEmailSender
     {

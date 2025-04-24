@@ -17,7 +17,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation, with the user if successful.
         /// </returns>
-        Task<OperationResult<TradesCoreUser>> GetUser(string id);
+        Task<OperationResult<TradesCoreUser>> GetUserAsync(string id);
 
         /// <summary>
         /// Retrieves all users in the database.
@@ -25,7 +25,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation, with a list of users if successful.
         /// </returns>
-        Task<OperationResult<List<TradesCoreUser>>> GetAllUsers();
+        Task<OperationResult<List<TradesCoreUser>>> GetAllUsersAsync();
 
         /// <summary>
         /// Updates an existing user.
@@ -36,7 +36,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<TradesCoreUser>> UpdateUser(TradesCoreUser user);
+        Task<OperationResult<TradesCoreUser>> UpdateUserAsync(TradesCoreUser user);
 
         /// <summary>
         /// Updates the email address of an existing user.
@@ -50,7 +50,24 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        //Task<OperationResult<TradesCoreUser>> UpdateEmail(string userId, string newEmail);
+        Task<OperationResult<TradesCoreUser>> UpdateEmailAsync(string userId, string newEmail);
+
+        /// <summary>
+        /// Confirms the email change for a user.
+        /// </summary>
+        /// <param name="userId">
+        /// The unique id of the user whose email address is to be updated.
+        /// </param>
+        /// <param name="emailChangeToken">
+        /// The token used to confirm the email change.
+        /// </param>
+        /// <param name="newEmail">
+        /// The new email address to be assigned to the user.
+        /// </param>
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        Task<OperationResult<TradesCoreUser>> ConfirmEmailChangeAsync(string userId, string emailChangeToken, string newEmail);
 
         /// <summary>
         /// Updates the phone number of an existing user.
@@ -64,7 +81,7 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        //Task<OperationResult<TradesCoreUser>> UpdatePhoneNumber(string userId, string newPhoneNumber);
+        Task<OperationResult<TradesCoreUser>> UpdatePhoneNumberAsync(string userId, string newPhoneNumber);
 
         /// <summary>
         /// Deletes an existing user.

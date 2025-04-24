@@ -1,11 +1,8 @@
-﻿using AutoMapper;
-using Data_Layer.DTOs;
-using Data_Layer.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
+﻿using Repository_Layer.IRepositories;
 using Microsoft.AspNetCore.Mvc;
-using Repository_Layer.IRepositories;
-using System.Threading.Tasks;
+using Data_Layer.Models;
+using Data_Layer.DTOs;
+using AutoMapper;
 
 namespace TradesCore_API.Controllers
 {
@@ -18,7 +15,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = await productRepo.AddProductAsync(mapper.Map<Product>(productRepo));
+                var result = await productRepo.AddProductAsync(mapper.Map<Product>(product));
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();
@@ -66,7 +63,7 @@ namespace TradesCore_API.Controllers
         {
             try
             {
-                var result = await productRepo.UpdateProductAsync(mapper.Map<ProductDto>(product);
+                var result = await productRepo.UpdateProductAsync(product);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
                 return Ok();

@@ -6,9 +6,9 @@ using Repository_Layer.IRepositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Repository_Layer.Repositories;
+using Service_Layer.IEmailService;
 using Service_Layer.EmailService;
 using TradesCore_API.Utilities;
-using Service_Layer.IEmail;
 using Data_Layer.Mappings;
 using Data_Layer.Models;
 using Scalar.AspNetCore;
@@ -27,21 +27,22 @@ builder.Services.AddScoped<IEmailService, EmailServices>();
 builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<IProductRepo, ProductRepo>();
 
-
-builder.Services.AddControllers().AddJsonOptions(options => 
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        options.JsonSerializerOptions.WriteIndented = true;
-    });
-
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IUrlHelperFactory, UrlHelperFactory>();
+
+builder.Services.AddControllers().AddJsonOptions(options => 
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+    options.JsonSerializerOptions.WriteIndented = true;
+});
+
+builder.Services.Configure<DataProtectionTokenProviderOptions>(options => options.TokenLifespan = TimeSpan.FromMinutes(60));
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<TradesCoreDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TradesCoreDatabase"))); //Change to proper DB Connection String on your side.
+    options.UseSqlServer(builder.Configuration.GetConnectionString("LukhanyoDatabase"))); //Change to proper DB Connection String on your side.
 
 builder.Services.AddIdentity<TradesCoreUser, IdentityRole>().AddEntityFrameworkStores<TradesCoreDbContext>().AddDefaultTokenProviders();
 

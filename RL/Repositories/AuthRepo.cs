@@ -1,15 +1,15 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using static Service_Layer.ResultService.ResultService;
+using Microsoft.Extensions.Configuration;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Repository_Layer.IRepositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
-using static Service_Layer.ResultService.ResultService;
+using Service_Layer.IEmailService;
 using System.Text.Encodings.Web;
 using System.Security.Claims;
 using Data_Layer.Utilities;
-using Service_Layer.IEmail;
 using Data_Layer.Models;
 using Data_Layer.Data;
 using Data_Layer.DTOs;
@@ -35,20 +35,6 @@ namespace Repository_Layer.Repositories
         /// Token creation failure message.
         /// </summary>
         private const string tokenCreationFailure = "Token Creation Failed!";
-
-        /// <summary>
-        /// Method to check if a username already exists in the database.
-        /// </summary>
-        /// <param name="username">
-        /// Username to check for existence.
-        /// </param>
-        /// <returns>
-        /// A <see cref="bool"/> indicating whether the username exists.
-        /// </returns>
-        private bool UsernameExists(string? username)
-        {
-            return username is not null && signInManager.UserManager.FindByNameAsync(username).Result is not null;
-        }
 
         /// <summary>
         /// Method to check if a phone number already exists in the database.
@@ -79,18 +65,20 @@ namespace Repository_Layer.Repositories
             {
                 var token = await signInManager.UserManager.GenerateEmailConfirmationTokenAsync(user);
 
-                var linkResult = emailService.GenerateLink(user.Id, token);
+                var linkResult = emailService.GenerateLink(user.Id, "ConfirmEmail", "Auth", token);
                 if (!linkResult.Success) throw new(linkResult.ErrorMessage);
 
                 return await emailSender.SendEmailAsync(user.Email!, "TradesCore Email Verification",
-                    $"Hi {user.FirstName},<br>"+
+                    $"Hi {user.FirstName},<br><br>"+
                     $"Your account with TradesCore has been successfully created. " +
-                    $"Please verify your email by <a href='{HtmlEncoder.Default.Encode(linkResult.Data!)}'>clicking here</a>."
+                    $"Please verify that this is your email by <a href='{HtmlEncoder.Default.Encode(linkResult.Data!)}'>clicking here</a>."
                 );
             }
             catch (Exception ex)
             {
-                return OperationResult<EmailSettings>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return ex.InnerException is null ?
+                    OperationResult<EmailSettings>.Failure(ex.Message) :
+                    OperationResult<EmailSettings>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -139,7 +127,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return ex.InnerException is null ?
+                    OperationResult<TradesCoreUser>.Failure(ex.Message) :
+                    OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -169,7 +159,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return ex.InnerException is null ?
+                    OperationResult<TradesCoreUser>.Failure(ex.Message) :
+                    OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -200,7 +192,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TokenResponseDto>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+                return ex.InnerException is null ?
+                    OperationResult<TokenResponseDto>.Failure(ex.Message) :
+                    OperationResult<TokenResponseDto>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -235,7 +229,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TokenResponseDto>.Failure($"{ex.Message}\nInner Exception: {ex.InnerException}");
+                return ex.InnerException is null ?
+                    OperationResult<TokenResponseDto>.Failure(ex.Message) :
+                    OperationResult<TokenResponseDto>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -262,7 +258,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TokenResponseDto>.Failure($"{ex.Message}\nInner Exception: {ex.InnerException}");
+                return ex.InnerException is null ?
+                    OperationResult<TokenResponseDto>.Failure(ex.Message) :
+                    OperationResult<TokenResponseDto>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -289,7 +287,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<TradesCoreUser>.Failure($"{ex.Message}\nInner Exception: {ex.InnerException}");
+                return ex.InnerException is null ?
+                    OperationResult<TradesCoreUser>.Failure(ex.Message) :
+                    OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 
@@ -340,7 +340,9 @@ namespace Repository_Layer.Repositories
             }
             catch (Exception ex)
             {
-                return OperationResult<RefreshToken>.Failure($"{tokenCreationFailure} {ex.Message}\nInner Exception: {ex.InnerException}");
+                return ex.InnerException is null ?
+                    OperationResult<RefreshToken>.Failure(ex.Message) :
+                    OperationResult<RefreshToken>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
             }
         }
 

@@ -45,6 +45,11 @@ namespace Data_Layer.Data
         public DbSet<RefreshToken> RefreshTokens { get; set; }
 
         /// <summary>
+        /// DbSet representing the NumberChangeTokens table in the database.
+        /// </summary>
+        public DbSet<NumberChangeToken> NumberChangeTokens { get; set; }
+
+        /// <summary>
         /// Configures the model for the database context.
         /// </summary>
         /// <param name="modelBuilder">
@@ -141,6 +146,8 @@ namespace Data_Layer.Data
                 user.Property(u => u.UserName)
                     .HasComputedColumnSql("CONCAT(FirstName, '_', LastName)");
             });
+
+            modelBuilder.Entity<NumberChangeToken>().HasKey(n => n.Token);
         }
     }
 }
