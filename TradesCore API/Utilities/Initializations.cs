@@ -4,15 +4,6 @@ using System.Security.Claims;
 using Data_Layer.Models;
 
 
-/*{
-  "firstName": "Test",
-  "lastName": "Case",
-  "username": null,
-  "email": "lukhanyomayekiso98@gmail.com",
-  "phoneNumber": "0785263698",
-  "role": "Customer"
-}*/
-
 namespace TradesCore_API.Utilities
 {
     public static class Initializations

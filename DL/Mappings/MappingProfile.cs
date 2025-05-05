@@ -8,8 +8,10 @@ namespace Data_Layer.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<TradesCoreUser, UserDto>();
-            CreateMap<UserDto, TradesCoreUser>();
+            CreateMap<TradesCoreUser, UserDto>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName));
+            CreateMap<UserDto, TradesCoreUser>()
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.UserName));
 
             CreateMap<Category, CategoryDto>();
             CreateMap<CategoryDto, Category>();

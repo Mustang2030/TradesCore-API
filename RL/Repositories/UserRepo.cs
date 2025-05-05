@@ -90,14 +90,16 @@ namespace Repository_Layer.Repositories
         {
             try
             {
-                var existingUser = await context.Users.FirstOrDefaultAsync(u => u.Email == user.Email)
+                if (user.Email is null) throw new("Please provider user email.");
+
+                var existingUser = await userManager.FindByEmailAsync(user.Email)
                     ?? throw new(userNotFound);
 
                 existingUser.FirstName = user.FirstName;
                 existingUser.LastName = user.LastName;
 
-                context.Update(existingUser);
-                await context.SaveChangesAsync();
+                var result = IdResult(await userManager.UpdateAsync(existingUser));
+                if (!result.Success) throw new(result.ErrorMessage);
 
                 return OperationResult<TradesCoreUser>.SuccessResult();
             }

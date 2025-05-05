@@ -357,7 +357,7 @@ namespace Repository_Layer.Repositories
         /// </returns>
         private string CreateToken(IEnumerable<Claim> claims)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["AppSettings:Token"]!));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["AppSettings:JWT_Key"]!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 

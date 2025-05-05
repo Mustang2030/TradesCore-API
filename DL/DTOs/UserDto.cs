@@ -18,7 +18,7 @@
         /// <summary>
         /// The username of the user.
         /// </summary>
-        public string? Username { get; }
+        public string UserName { get; set; }
 
         /// <summary>
         /// The email of the user.

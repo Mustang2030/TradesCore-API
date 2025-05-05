@@ -22,6 +22,27 @@
   },
   {
     "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "ChangePhoneNumber",
+    "RelativePath": "api/Account/change-phonenumber",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "newPhoneNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
     "Method": "ConfirmNewEmail",
     "RelativePath": "api/Account/confirm-new-email",
     "HttpMethod": "GET",
@@ -63,6 +84,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/Account/get-all-users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "GetUser",
+    "RelativePath": "api/Account/get-user",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "UpdateUser",
+    "RelativePath": "api/Account/update-user",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Data_Layer.DTOs.UserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
     "Method": "ConfirmEmail",
     "RelativePath": "api/Auth/confirm-email",
@@ -97,17 +160,7 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "Data_Layer.DTOs.TokenResponseDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "TradesCore_API.Controllers.AuthController",
@@ -134,7 +187,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "request",
+        "Name": "user",
         "Type": "Data_Layer.DTOs.UserDto",
         "IsRequired": true
       },
@@ -292,16 +345,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TradesCore_API.Controllers.PublicController",
-    "Method": "GetAllCategories",
-    "RelativePath": "api/Public/GetAllCategories",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   }
 ]
