@@ -20,6 +20,17 @@ namespace Repository_Layer.IRepositories
         Task<OperationResult<TradesCoreUser>> GetUserAsync(string id);
 
         /// <summary>
+        /// Retrieves a user with the specified email address.
+        /// </summary>
+        /// <param name="email">
+        /// The email address of the user to retrieve.
+        /// </param>
+        /// <returns>
+        /// The result of the operation, with the user if successful.
+        /// </returns>
+        Task<OperationResult<TradesCoreUser>> GetUserByEmailAsync(string email);
+
+        /// <summary>
         /// Retrieves all users in the database.
         /// </summary>
         /// <returns>
@@ -84,7 +95,18 @@ namespace Repository_Layer.IRepositories
         Task<OperationResult<TradesCoreUser>> UpdatePhoneNumberAsync(string userId, string newPhoneNumber);
 
         /// <summary>
-        /// Deletes an existing user.
+        /// Finds a user by their unique identifier and deletes them.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier of the user to delete.
+        /// </param>
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        Task<OperationResult<TradesCoreUser>> DeleteUserAsync(string id);
+        
+        /// <summary>
+        /// Finds an existing user by their email address and deletes them.
         /// </summary>
         /// <param name="email">
         /// The email of the user to delete.
@@ -92,6 +114,6 @@ namespace Repository_Layer.IRepositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        Task<OperationResult<TradesCoreUser>> DeleteUserAsync(string email);
+        Task<OperationResult<TradesCoreUser>> DeleteUserByEmailAsync(string email);
     }
 }

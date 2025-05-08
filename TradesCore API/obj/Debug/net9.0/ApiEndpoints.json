@@ -76,6 +76,22 @@
     "Order": 0,
     "Parameters": [
       {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "DeleteUserByEmail",
+    "RelativePath": "api/Account/delete-user-by-email",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
         "Name": "email",
         "Type": "System.String",
         "IsRequired": false
@@ -103,6 +119,22 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TradesCore_API.Controllers.AccountController",
+    "Method": "GetUserByEmail",
+    "RelativePath": "api/Account/get-user-by-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
         "Type": "System.String",
         "IsRequired": false
       }

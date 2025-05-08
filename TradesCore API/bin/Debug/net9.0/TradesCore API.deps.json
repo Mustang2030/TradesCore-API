@@ -1773,6 +1773,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "Data Layer": "1.0.0",
+          "Microsoft.AspNetCore.Http": "2.3.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.4",
           "Microsoft.AspNetCore.Mvc": "2.3.0"
         },

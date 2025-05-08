@@ -42,17 +42,11 @@ namespace Data_Layer.Models
         /// </summary>
         public string ImageUrl { get; set; }
 
-        #region Foreign Key
-        //public string UserId { get; set; }
-        #endregion
-
         #region Navigation Properties
         /// <summary>
         /// Navigation Property to the Category table.
         /// </summary>
         public List<Category>? Categories { get; set; }
-
-        //public User User { get; set; }
 
         /// <summary>
         /// Navigation property to the Order table.

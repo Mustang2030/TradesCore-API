@@ -45,7 +45,6 @@ builder.Services.AddDbContext<TradesCoreDbContext>(options =>
 
 builder.Services.AddIdentity<TradesCoreUser, IdentityRole>().AddEntityFrameworkStores<TradesCoreDbContext>().AddDefaultTokenProviders();
 
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -61,7 +60,7 @@ builder.Services.AddAuthentication(options =>
         ValidAudience = builder.Configuration["AppSettings:Audience"],
         ValidateLifetime = true,
         IssuerSigningKey = new SymmetricSecurityKey(
-            Encoding.UTF8.GetBytes(builder.Configuration["AppSettings:JWT_Key"]!)),
+            Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TradesCore_JWT_Key", EnvironmentVariableTarget.User)!)),
         ValidateIssuerSigningKey = true,
     };
 });

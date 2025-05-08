@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using static Service_Layer.UserService.UserService;
+using Microsoft.AspNetCore.Authorization;
 using Repository_Layer.IRepositories;
 using Microsoft.AspNetCore.Mvc;
 using Data_Layer.Models;
@@ -16,7 +17,6 @@ namespace TradesCore_API.Controllers
     /// <param name="mapper">
     /// The AutoMapper instance used for mapping between DTOs and domain models.
     /// </param>
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AccountController(IUserRepo userRepo, IMapper mapper) : ControllerBase
@@ -66,7 +66,39 @@ namespace TradesCore_API.Controllers
         {
             try
             {
+                if (!AccessAllowedById(HttpContext, id))
+                    return Forbid();
+
                 var result = await userRepo.GetUserAsync(id);
+
+                if (!result.Success) return BadRequest(result.ErrorMessage);
+                return Ok(mapper.Map<UserDto>(result.Data!));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// API endpoint for retrieving a user by their email address.
+        /// </summary>
+        /// <param name="email">
+        /// The email address of the user to retrieve.
+        /// </param>
+        /// <returns>
+        /// An <see cref="IActionResult"/> containing the user information if successful, or an error message if not.
+        /// </returns>
+        [Authorize]
+        [HttpGet("get-user-by-email")]
+        public async Task<IActionResult> GetUserByEmail(string email)
+        {
+            try
+            {
+                if (!AccessAllowedByEmail(HttpContext, email))
+                    return Forbid();
+
+                var result = await userRepo.GetUserByEmailAsync(email);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
                 return Ok(mapper.Map<UserDto>(result.Data!));
             }
@@ -91,6 +123,9 @@ namespace TradesCore_API.Controllers
         {
             try
             {
+                if (!AccessAllowedByEmail(HttpContext, user.Email))
+                    return Forbid();
+
                 var result = await userRepo.UpdateUserAsync(mapper.Map<TradesCoreUser>(user));
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
@@ -120,6 +155,9 @@ namespace TradesCore_API.Controllers
         {
             try
             {
+                if (!AccessAllowedById(HttpContext, userId))
+                    return Forbid();
+
                 var result = await userRepo.UpdatePhoneNumberAsync(userId, newPhoneNumber);
                 if (!result.Success) return BadRequest(result.ErrorMessage);
 
@@ -149,6 +187,9 @@ namespace TradesCore_API.Controllers
         {
             try
             {
+                if (!AccessAllowedById(HttpContext, userId))
+                    return Forbid();
+
                 var result = await userRepo.UpdateEmailAsync(userId, newEmail);
                 if (!result.Success) throw new(result.ErrorMessage);
                 return Ok();
@@ -174,7 +215,6 @@ namespace TradesCore_API.Controllers
         /// <returns>
         /// An <see cref="IActionResult"/> indicating the result of the email confirmation operation.
         /// </returns>
-        [Authorize]
         [HttpGet("confirm-new-email")]
         public async Task<IActionResult> ConfirmNewEmail(string userId, string token, string newEmail)
         {
@@ -200,12 +240,29 @@ namespace TradesCore_API.Controllers
         /// An <see cref="IActionResult"/> indicating the result of the delete operation.
         /// </returns>
         [Authorize(Roles = "Admin")]
-        [HttpDelete("delete-user")]
-        public async Task<IActionResult> DeleteUser(string email)
+        [HttpDelete("delete-user-by-email")]
+        public async Task<IActionResult> DeleteUserByEmail(string email)
         {
             try
             {
-                var result = await userRepo.DeleteUserAsync(email);
+                var result = await userRepo.DeleteUserByEmailAsync(email);
+                if (!result.Success) throw new(result.ErrorMessage);
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("delete-user")]
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            try
+            {
+                var result = await userRepo.DeleteUserAsync(id);
                 if (!result.Success) throw new(result.ErrorMessage);
 
                 return Ok();

@@ -6,7 +6,6 @@ using Service_Layer.IEmailService;
 using Data_Layer.Utilities;
 using Data_Layer.Models;
 using Data_Layer.Data;
-using System.Security.Cryptography;
 
 namespace Repository_Layer.Repositories
 {
@@ -57,6 +56,30 @@ namespace Repository_Layer.Repositories
         }
 
         /// <summary>
+        /// Retrieves a user with the specified email address.
+        /// </summary>
+        /// <param name="email">
+        /// The email address of the user to retrieve.
+        /// </param>
+        /// <returns>
+        /// The result of the operation, with the user if successful.
+        /// </returns>
+        public async Task<OperationResult<TradesCoreUser>> GetUserByEmailAsync(string email)
+        {
+            try
+            {
+                var user = await userManager.FindByEmailAsync(email) ?? throw new(userNotFound);
+                return OperationResult<TradesCoreUser>.SuccessResult(user);
+            }
+            catch (Exception ex)
+            {
+                return ex.InnerException is null ?
+                    OperationResult<TradesCoreUser>.Failure(ex.Message) :
+                    OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+            }
+        }
+
+        /// <summary>
         /// Retrieves all users in the database.
         /// </summary>
         /// <returns>
@@ -90,9 +113,7 @@ namespace Repository_Layer.Repositories
         {
             try
             {
-                if (user.Email is null) throw new("Please provider user email.");
-
-                var existingUser = await userManager.FindByEmailAsync(user.Email)
+                var existingUser = await userManager.FindByEmailAsync(user.Email!)
                     ?? throw new(userNotFound);
 
                 existingUser.FirstName = user.FirstName;
@@ -234,7 +255,35 @@ namespace Repository_Layer.Repositories
         }
 
         /// <summary>
-        /// Deletes an existing user.
+        /// Finds a user by their unique identifier and deletes them.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier of the user to delete.
+        /// </param>
+        /// <returns>
+        /// The result of the operation.
+        /// </returns>
+        public async Task<OperationResult<TradesCoreUser>> DeleteUserAsync(string id)
+        {
+            try
+            {
+                var user = await userManager.FindByIdAsync(id) ?? throw new(userNotFound);
+
+                var result = IdResult(await userManager.DeleteAsync(user));
+                if (!result.Success) throw new(result.ErrorMessage);
+
+                return OperationResult<TradesCoreUser>.SuccessResult();
+            }
+            catch (Exception ex)
+            {
+                return ex.InnerException is null ?
+                    OperationResult<TradesCoreUser>.Failure(ex.Message) :
+                    OperationResult<TradesCoreUser>.Failure(ex.Message + "\nInner Exception: " + ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Finds an existing user by their email address and deletes them.
         /// </summary>
         /// <param name="email">
         /// The email of the user to delete.
@@ -242,12 +291,11 @@ namespace Repository_Layer.Repositories
         /// <returns>
         /// The result of the operation.
         /// </returns>
-        public async Task<OperationResult<TradesCoreUser>> DeleteUserAsync(string email)
+        public async Task<OperationResult<TradesCoreUser>> DeleteUserByEmailAsync(string email)
         {
             try
             {
-                var user = await userManager.FindByEmailAsync(email) ??
-                    throw new(userNotFound);
+                var user = await userManager.FindByEmailAsync(email) ?? throw new(userNotFound);
 
                 var result = IdResult(await userManager.DeleteAsync(user));
                 if (!result.Success) throw new(result.ErrorMessage);

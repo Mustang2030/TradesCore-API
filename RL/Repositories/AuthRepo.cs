@@ -179,8 +179,8 @@ namespace Repository_Layer.Repositories
             try
             {
                 const string invalidCreds = "Invalid credentials.";
-                var user = await signInManager.UserManager.FindByEmailAsync(userInfo.Email);
-                if (user is null) throw new(invalidCreds);
+                var user = await signInManager.UserManager.FindByEmailAsync(userInfo.Email) ??
+                    throw new(invalidCreds);
 
                 var result = await signInManager.CheckPasswordSignInAsync(user, userInfo.Password, false);
                 if (!result.Succeeded) throw new(invalidCreds);
@@ -277,8 +277,8 @@ namespace Repository_Layer.Repositories
         {
             try
             {
-                var user = await context.Users.Include(r => r.RefreshToken).FirstOrDefaultAsync(u => u.Id == refreshTokenRequest.UserId);
-                if (user is null) throw new("User with the specified ID not found.");
+                var user = await context.Users.AsNoTracking().Include(r => r.RefreshToken).FirstOrDefaultAsync(u => u.Id == refreshTokenRequest.UserId) ??
+                    throw new("User with the specified ID not found.");
 
                 if (user.RefreshToken.Token != refreshTokenRequest.RefreshToken || user.RefreshToken.ExpiresAt <= DateTime.UtcNow)
                     throw new("Invalid refresh token.");
@@ -357,7 +357,8 @@ namespace Repository_Layer.Repositories
         /// </returns>
         private string CreateToken(IEnumerable<Claim> claims)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["AppSettings:JWT_Key"]!));
+            var key = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(Environment.GetEnvironmentVariable("TradesCore_JWT_Key", EnvironmentVariableTarget.User)!));
 
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha512);
 
@@ -365,7 +366,7 @@ namespace Repository_Layer.Repositories
                 issuer: configuration["AppSettings:Issuer"],
                 audience: configuration["AppSettings:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddMinutes(30),
+                expires: DateTime.Now.AddMinutes(10),
                 signingCredentials: creds
             );
 
